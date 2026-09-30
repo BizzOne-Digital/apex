@@ -118,7 +118,10 @@ export function purchasesRouter(env: Env): Router {
 
   router.post('/dev-simulate', async (req, res, next) => {
     try {
-      if (env.NODE_ENV === 'production' || !env.ENABLE_DEV_PURCHASE_SIMULATOR) {
+      const allowDevSimulate =
+        env.CLIENT_PREVIEW_DEMO_PURCHASES ||
+        (env.NODE_ENV !== 'production' && env.ENABLE_DEV_PURCHASE_SIMULATOR);
+      if (!allowDevSimulate) {
         throw new ApiError(403, 'FORBIDDEN', 'Dev purchase simulator disabled');
       }
       const installationId = req.installationId!;

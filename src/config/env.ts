@@ -15,6 +15,11 @@ const envSchema = z.object({
     .string()
     .optional()
     .transform((v) => v === 'true'),
+  /** Allows POST /purchases/dev-simulate in production for client preview APKs (not real IAP). */
+  CLIENT_PREVIEW_DEMO_PURCHASES: z
+    .string()
+    .optional()
+    .transform((v) => v === 'true'),
   APPLE_SHARED_SECRET: z.string().optional(),
   APPLE_BUNDLE_ID: z.string().optional(),
   GOOGLE_PLAY_PACKAGE_NAME: z.string().optional(),
