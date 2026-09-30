@@ -3,11 +3,22 @@ import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import type { Env } from './config/env.js';
+import { connectMongo } from './db.js';
 import { createV1Router } from './routes/v1/index.js';
 import { sendError } from './utils/errors.js';
 
 export function createApp(env: Env): express.Application {
   const app = express();
+
+  app.use(async (_req, _res, next) => {
+    try {
+      await connectMongo(env.MONGODB_URI);
+      next();
+    } catch (err) {
+      next(err);
+    }
+  });
+
   app.use(helmet());
   app.use(cors());
   app.use(express.json({ limit: '1mb' }));

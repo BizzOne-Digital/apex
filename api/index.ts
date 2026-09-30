@@ -1,14 +1,7 @@
-import type { IncomingMessage, ServerResponse } from 'node:http';
-import serverless from 'serverless-http';
 import { loadEnv } from '../src/config/env.js';
 import { createApp } from '../src/app.js';
-import { connectMongo } from '../src/db.js';
 
-const env = loadEnv();
-const app = createApp(env);
-const serverlessHandler = serverless(app);
+/** Default export for Vercel (@vercel/node treats Express apps as HTTP handlers). */
+const app = createApp(loadEnv());
 
-export default async function handler(req: IncomingMessage, res: ServerResponse) {
-  await connectMongo(env.MONGODB_URI);
-  return serverlessHandler(req, res);
-}
+export default app;
