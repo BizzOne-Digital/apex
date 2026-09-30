@@ -1,0 +1,238 @@
+{
+  "videos": [
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "lat-pulldown",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-1-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Monday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "seated-cable-row",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-1-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Monday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "standing-bicep-cable-curl",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-1-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Monday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "standing-tricep-cable-pressdown",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-1-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Monday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "seated-machine-shoulder-press",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-1-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Monday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "ab-crunch",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-1-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Monday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "seated-leg-extension",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-2-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Tuesday a.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "leg-press-machine",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-2-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Tuesday a.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "lying-hamstring-curl",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-2-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Tuesday a.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "standing-calf-raise",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-2-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Tuesday a.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "seated-machine-bench-press",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-2-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Tuesday a.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "seated-pec-deck-fly",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-2-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Tuesday a.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "cardio-20-min",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-3-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Wednesday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "wednesday-abs",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-3-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Wednesday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "lat-pulldown",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-4-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Thursday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "seated-cable-row",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-4-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Thursday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "standing-bicep-cable-curl",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-4-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Thursday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "standing-tricep-cable-pressdown",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-4-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Thursday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "seated-machine-shoulder-press",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-4-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Thursday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "ab-crunch",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-4-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Thursday 1.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "seated-leg-extension",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-5-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Friday a.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "leg-press-machine",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-5-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Friday a.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "lying-hamstring-curl",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-5-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Friday a.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "standing-calf-raise",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-5-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Friday a.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "seated-machine-bench-press",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-5-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Friday a.mp4"
+    },
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "seated-pec-deck-fly",
+      "avatarPresentation": "female",
+      "mediaKey": "starter/day-5-rev3.mp4",
+      "durationSeconds": 8,
+      "approvalStatus": "approved",
+      "_sourceFile": "Friday a.mp4"
+    }
+  ]
+}

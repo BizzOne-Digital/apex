@@ -1,0 +1,15 @@
+{
+  "_comment": "Map Dropbox-exported files to exercises after upload to durable storage. Run scripts/import-videos.ts",
+  "videos": [
+    {
+      "programSlug": "starter",
+      "exerciseSlug": "standing-cable-curl",
+      "avatarPresentation": "male",
+      "localFile": "dropbox-export/standing-cable-curl-male.mp4",
+      "mediaKey": "videos/starter/standing-cable-curl-male-v1.mp4",
+      "thumbnailKey": "thumbnails/starter/standing-cable-curl-male.jpg",
+      "durationSeconds": 8,
+      "approvalStatus": "pending"
+    }
+  ]
+}

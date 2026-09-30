@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "starter",
+    "name": "Starter",
+    "level": "Beginner",
+    "description": "Foundational strength and movement patterns. One-time purchase unlocks the full Starter exercise library on this device via your store account.",
+    "displayPriceUsd": 99,
+    "storeProductIds": { "ios": "com.apex.fitness.starter", "android": "com.apex.fitness.starter" },
+    "artworkUrl": "",
+    "previewExerciseSlugs": ["lat-pulldown", "seated-cable-row", "standing-bicep-cable-curl"],
+    "published": true,
+    "displayOrder": 1,
+    "featureFlags": { "guidedTimersEnabled": true, "categoryFilterEnabled": true }
+  },
+  {
+    "slug": "elite",
+    "name": "Elite",
+    "level": "Intermediate",
+    "description": "Progressive training for experienced movers. Content imported when client approves the Elite exercise list.",
+    "displayPriceUsd": 199,
+    "storeProductIds": { "ios": "com.apex.fitness.elite", "android": "com.apex.fitness.elite" },
+    "artworkUrl": "",
+    "previewExerciseSlugs": [],
+    "published": true,
+    "displayOrder": 2,
+    "featureFlags": { "guidedTimersEnabled": false, "categoryFilterEnabled": true }
+  },
+  {
+    "slug": "platinum",
+    "name": "Platinum",
+    "level": "Advanced",
+    "description": "Advanced programming for peak performance. Content imported when client approves the Platinum exercise list.",
+    "displayPriceUsd": 299,
+    "storeProductIds": { "ios": "com.apex.fitness.platinum", "android": "com.apex.fitness.platinum" },
+    "artworkUrl": "",
+    "previewExerciseSlugs": [],
+    "published": true,
+    "displayOrder": 3,
+    "featureFlags": { "guidedTimersEnabled": false, "categoryFilterEnabled": true }
+  }
+]
