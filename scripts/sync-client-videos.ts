@@ -1,9 +1,12 @@
 /**
- * Copies client folder "Fitness Video - 3rd Rev" into server/media/videos.
- * One MP4 per weekday → all exercises on that workout day share the session clip
- * until per-exercise AI avatar clips are delivered.
+ * Copies client "Fitness Video" folders into server/media/videos (one MP4 per exercise).
+ *
+ * Folder layout (under repo root or --source=):
+ *   Fitness Video/Monday - Thursday   → Day 1 exercises (Mon & Thu in app)
+ *   Fitness Video/Tuesday - Friday    → Day 2 exercises (Tue & Fri)
+ *   Fitness Video/Wednesday           → Day 3 (cardio + abs)
  */
-import { copyFileSync, existsSync, mkdirSync, writeFileSync } from 'fs';
+import { copyFileSync, existsSync, mkdirSync, readdirSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -31,51 +34,80 @@ const DAY_2_SLUGS = [
 
 const DAY_3_SLUGS = ['cardio-20-min', 'wednesday-abs'];
 
-const DAY_FILES: {
-  file: string;
-  mediaKey: string;
-  exerciseSlugs: string[];
-}[] = [
-  { file: 'Monday 1.mp4', mediaKey: 'starter/day-1-rev3.mp4', exerciseSlugs: DAY_1_SLUGS },
-  { file: 'Tuesday a.mp4', mediaKey: 'starter/day-2-rev3.mp4', exerciseSlugs: DAY_2_SLUGS },
-  { file: 'Wednesday 1.mp4', mediaKey: 'starter/day-3-rev3.mp4', exerciseSlugs: DAY_3_SLUGS },
-  { file: 'Thursday 1.mp4', mediaKey: 'starter/day-4-rev3.mp4', exerciseSlugs: DAY_1_SLUGS },
-  { file: 'Friday a.mp4', mediaKey: 'starter/day-5-rev3.mp4', exerciseSlugs: DAY_2_SLUGS },
+const FOLDER_MAP: { subdir: string; exerciseSlugs: string[] }[] = [
+  { subdir: 'Monday - Thursday', exerciseSlugs: DAY_1_SLUGS },
+  { subdir: 'Tuesday - Friday', exerciseSlugs: DAY_2_SLUGS },
+  { subdir: 'Wednesday', exerciseSlugs: DAY_3_SLUGS },
 ];
+
+/** Sort "…_5.mp4", "…_5_1.mp4", "…_5_2.mp4" in demo order. */
+function sortDemoVideoFiles(files: string[]): string[] {
+  const orderKey = (name: string): number => {
+    const m = name.match(/_5(?:_(\d+))?\.mp4$/i);
+    if (!m) return 999;
+    if (m[1] === undefined) return 0;
+    return Number.parseInt(m[1], 10);
+  };
+  return [...files].sort((a, b) => orderKey(a) - orderKey(b) || a.localeCompare(b));
+}
+
+function listMp4(dir: string): string[] {
+  if (!existsSync(dir)) return [];
+  return sortDemoVideoFiles(
+    readdirSync(dir).filter((f) => f.toLowerCase().endsWith('.mp4'))
+  );
+}
+
+function mediaKeyForSlug(slug: string): string {
+  return `starter/exercises/${slug}-female.mp4`;
+}
 
 function main(): void {
   const sourceArg = process.argv.find((a) => a.startsWith('--source='));
-  const sourceDir = sourceArg
+  const sourceRoot = sourceArg
     ? sourceArg.split('=').slice(1).join('=')
-    : join(repoRoot, 'Fitness Video - 3rd Rev');
+    : join(repoRoot, 'Fitness Video');
 
-  if (!existsSync(sourceDir)) {
-    console.error('Source folder not found:', sourceDir);
+  if (!existsSync(sourceRoot)) {
+    console.error('Source folder not found:', sourceRoot);
     process.exit(1);
   }
 
   const videos: object[] = [];
 
-  for (const day of DAY_FILES) {
-    const src = join(sourceDir, day.file);
-    if (!existsSync(src)) {
-      console.warn('Missing file, skip:', src);
+  for (const { subdir, exerciseSlugs } of FOLDER_MAP) {
+    const folder = join(sourceRoot, subdir);
+    const files = listMp4(folder);
+    if (files.length === 0) {
+      console.warn('No MP4 files in', folder);
       continue;
     }
-    const dest = join(serverRoot, 'media', 'videos', day.mediaKey);
-    mkdirSync(dirname(dest), { recursive: true });
-    copyFileSync(src, dest);
-    console.log('Copied →', day.mediaKey);
 
-    for (const exerciseSlug of day.exerciseSlugs) {
+    const pairs = Math.min(files.length, exerciseSlugs.length);
+    if (files.length !== exerciseSlugs.length) {
+      console.warn(
+        `${subdir}: ${files.length} file(s), ${exerciseSlugs.length} exercise(s) — mapping first ${pairs}`
+      );
+    }
+
+    for (let i = 0; i < pairs; i++) {
+      const file = files[i];
+      const exerciseSlug = exerciseSlugs[i];
+      const mediaKey = mediaKeyForSlug(exerciseSlug);
+      const src = join(folder, file);
+      const dest = join(serverRoot, 'media', 'videos', mediaKey);
+      mkdirSync(dirname(dest), { recursive: true });
+      copyFileSync(src, dest);
+      console.log(`${subdir}/${file} → ${exerciseSlug} (${mediaKey})`);
+
       videos.push({
         programSlug: 'starter',
         exerciseSlug,
         avatarPresentation: 'female',
-        mediaKey: day.mediaKey,
-        durationSeconds: 8,
+        mediaKey,
+        durationSeconds: 10,
         approvalStatus: 'approved',
-        _sourceFile: day.file,
+        _sourceFile: join(subdir, file),
       });
     }
   }

@@ -4,235 +4,127 @@
       "programSlug": "starter",
       "exerciseSlug": "lat-pulldown",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-1-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/lat-pulldown-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday 1.mp4"
+      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "seated-cable-row",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-1-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/seated-cable-row-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday 1.mp4"
+      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5_1.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "standing-bicep-cable-curl",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-1-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/standing-bicep-cable-curl-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday 1.mp4"
+      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5_2.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "standing-tricep-cable-pressdown",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-1-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/standing-tricep-cable-pressdown-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday 1.mp4"
+      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5_3.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "seated-machine-shoulder-press",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-1-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/seated-machine-shoulder-press-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday 1.mp4"
+      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5_4.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "ab-crunch",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-1-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/ab-crunch-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday 1.mp4"
+      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5_5.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "seated-leg-extension",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-2-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/seated-leg-extension-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday a.mp4"
+      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "leg-press-machine",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-2-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/leg-press-machine-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday a.mp4"
+      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5_1.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "lying-hamstring-curl",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-2-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/lying-hamstring-curl-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday a.mp4"
+      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5_2.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "standing-calf-raise",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-2-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/standing-calf-raise-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday a.mp4"
+      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5_3.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "seated-machine-bench-press",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-2-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/seated-machine-bench-press-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday a.mp4"
+      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5_4.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "seated-pec-deck-fly",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-2-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/seated-pec-deck-fly-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday a.mp4"
+      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5_5.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "cardio-20-min",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-3-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/cardio-20-min-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Wednesday 1.mp4"
+      "_sourceFile": "Wednesday\\Wednesday Exercise Demo Videos_5.mp4"
     },
     {
       "programSlug": "starter",
       "exerciseSlug": "wednesday-abs",
       "avatarPresentation": "female",
-      "mediaKey": "starter/day-3-rev3.mp4",
-      "durationSeconds": 8,
+      "mediaKey": "starter/exercises/wednesday-abs-female.mp4",
+      "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Wednesday 1.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "lat-pulldown",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-4-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Thursday 1.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "seated-cable-row",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-4-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Thursday 1.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "standing-bicep-cable-curl",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-4-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Thursday 1.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "standing-tricep-cable-pressdown",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-4-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Thursday 1.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "seated-machine-shoulder-press",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-4-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Thursday 1.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "ab-crunch",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-4-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Thursday 1.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "seated-leg-extension",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-5-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Friday a.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "leg-press-machine",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-5-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Friday a.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "lying-hamstring-curl",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-5-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Friday a.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "standing-calf-raise",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-5-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Friday a.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "seated-machine-bench-press",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-5-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Friday a.mp4"
-    },
-    {
-      "programSlug": "starter",
-      "exerciseSlug": "seated-pec-deck-fly",
-      "avatarPresentation": "female",
-      "mediaKey": "starter/day-5-rev3.mp4",
-      "durationSeconds": 8,
-      "approvalStatus": "approved",
-      "_sourceFile": "Friday a.mp4"
+      "_sourceFile": "Wednesday\\Wednesday Exercise Demo Videos_5_1.mp4"
     }
   ]
 }
