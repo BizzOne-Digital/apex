@@ -1,8 +1,11 @@
 import express from 'express';
 import cors from 'cors';
-import helmet from 'helmet';
-import rateLimit from 'express-rate-limit';
+import * as helmetModule from 'helmet';
+import { rateLimit } from 'express-rate-limit';
 import type { Env } from './config/env.js';
+
+/** CJS/ESM interop: Vercel TS 5.9 resolves default import as non-callable namespace. */
+const helmet = helmetModule.default;
 import { connectMongo } from './db.js';
 import { createV1Router } from './routes/v1/index.js';
 import { sendError } from './utils/errors.js';
