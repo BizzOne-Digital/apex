@@ -102,8 +102,17 @@ async function main() {
         token,
         body: JSON.stringify({ videoId: videos[0].id }),
       });
-      if (pb.res.status === 200 && pb.body.playbackPath) pass('playback token');
-      else fail('playback token', `status ${pb.res.status}`);
+      if (pb.res.status === 200 && pb.body.playbackPath) {
+        pass('playback token');
+        const origin = BASE.replace(/\/api\/v1\/?$/, '');
+        const streamRes = await fetch(`${origin}${pb.body.playbackPath}`);
+        const ct = streamRes.headers.get('content-type') ?? '';
+        if (streamRes.status === 200 && ct.includes('video')) {
+          pass('playback stream', ct);
+        } else {
+          fail('playback stream', `status ${streamRes.status} type ${ct}`);
+        }
+      } else fail('playback token', `status ${pb.res.status}`);
     } else {
       pass('playback token', 'skipped — no videos on exercise');
     }

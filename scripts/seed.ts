@@ -73,7 +73,8 @@ async function seed(): Promise<void> {
     {
       key: 'support.contact',
       value: {
-        email: '[CLIENT: support@example.com]',
+        email: 'art@elitebodyfitnesspros.com',
+        phone: '+1 (916) 223-3228',
         purchaseHelp: 'Purchases are tied to your Apple ID or Google account. Use Restore Purchases on a new install.',
         playbackHelp: 'Ensure a stable connection. Tap retry if a video fails to load.',
       },
@@ -81,7 +82,7 @@ async function seed(): Promise<void> {
     {
       key: 'branding',
       value: {
-        appName: 'APEX Fitness Training',
+        appName: 'ELITE BODY FITNESS PROS',
         tagline: 'Explore Programs',
         approvalStatus: 'pending',
       },

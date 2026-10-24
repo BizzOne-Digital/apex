@@ -30,10 +30,26 @@ const upsertVideoSchema = z.object({
   exerciseSlug: z.string(),
   programSlug: z.string(),
   avatarPresentation: z.enum(['male', 'female']),
-  mediaKey: z.string(),
+  mediaKey: z
+    .string()
+    .min(1)
+    .max(300)
+    .refine((k) => !k.includes('..') && !k.startsWith('/') && !k.includes('\\'), 'Invalid media key'),
   thumbnailKey: z.string().optional(),
   durationSeconds: z.number().optional(),
   approvalStatus: z.enum(['pending', 'approved']).optional(),
+});
+
+const upsertProgramSchema = z
+  .object({
+    slug: z.string().min(1).max(100).regex(/^[a-z0-9-]+$/),
+    published: z.boolean().optional(),
+  })
+  .passthrough();
+
+const upsertContentSchema = z.object({
+  key: z.string().min(1).max(100).regex(/^[a-zA-Z0-9._-]+$/),
+  value: z.unknown(),
 });
 
 export function adminRouter(): Router {
@@ -41,8 +57,10 @@ export function adminRouter(): Router {
 
   router.post('/programs/upsert', async (req, res, next) => {
     try {
-      const program = req.body;
-      await Program.findOneAndUpdate({ slug: program.slug }, program, {
+      const program = upsertProgramSchema.parse(req.body);
+      // $set only: blocks Mongo operator keys ($where, $rename...) coming from the body.
+      const safe = Object.fromEntries(Object.entries(program).filter(([k]) => !k.startsWith('$') && !k.includes('.')));
+      await Program.findOneAndUpdate({ slug: program.slug }, { $set: safe }, {
         upsert: true,
         new: true,
       });
@@ -95,7 +113,7 @@ export function adminRouter(): Router {
 
   router.post('/content/upsert', async (req, res, next) => {
     try {
-      const { key, value } = req.body as { key: string; value: unknown };
+      const { key, value } = upsertContentSchema.parse(req.body);
       await AppContent.findOneAndUpdate({ key }, { value }, { upsert: true });
       res.json({ ok: true });
     } catch (e) {

@@ -8,7 +8,11 @@ export async function connectMongo(uri: string): Promise<typeof mongoose> {
     return mongoose;
   }
   if (!connectPromise) {
-    connectPromise = mongoose.connect(uri);
+    connectPromise = mongoose.connect(uri, { serverSelectionTimeoutMS: 10_000 }).catch((err) => {
+      // Do not cache a failed attempt, otherwise every later request fails until restart.
+      connectPromise = null;
+      throw err;
+    });
   }
   return connectPromise;
 }

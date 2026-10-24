@@ -20,7 +20,7 @@ export function signPlaybackUrl(
     .createHmac('sha256', env.PLAYBACK_URL_SECRET)
     .update(payload)
     .digest('hex');
-  const base = `/api/v1/media/playback?exerciseId=${encodeURIComponent(exerciseId)}&videoId=${encodeURIComponent(videoId)}&exp=${expiresAt}&sig=${sig}`;
+  const base = `/api/v1/media/playback?exerciseId=${encodeURIComponent(exerciseId)}&videoId=${encodeURIComponent(videoId)}&installationId=${encodeURIComponent(installationId)}&exp=${expiresAt}&sig=${sig}`;
   return { url: base, expiresAt };
 }
 

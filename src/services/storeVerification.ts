@@ -14,7 +14,8 @@ export type VerifyPurchaseResult =
 
 /**
  * Production: verify with Apple App Store / Google Play.
- * Until credentials are configured, returns a clear failure in production.
+ * SECURITY: fails closed. Receipts / purchase tokens are NOT trusted until real server-side
+ * verification (App Store Server API / Google Play Developer API) is implemented below.
  */
 export async function verifyStorePurchase(
   env: Env,
@@ -31,11 +32,11 @@ export async function verifyStorePurchase(
     if (!env.APPLE_SHARED_SECRET) {
       return { ok: false, reason: 'APPLE_VERIFICATION_NOT_CONFIGURED' };
     }
-    // TODO: Integrate @apple/app-store-server-library when credentials provided.
     if (!input.receiptData) {
       return { ok: false, reason: 'MISSING_RECEIPT' };
     }
-    return { ok: true, transactionId: input.transactionId };
+    // TODO: verify with @apple/app-store-server-library, then return ok:true with the verified transaction id.
+    return { ok: false, reason: 'APPLE_VERIFICATION_NOT_IMPLEMENTED' };
   }
 
   if (input.platform === 'android') {
@@ -45,7 +46,8 @@ export async function verifyStorePurchase(
     if (!input.purchaseToken) {
       return { ok: false, reason: 'MISSING_PURCHASE_TOKEN' };
     }
-    return { ok: true, transactionId: input.transactionId };
+    // TODO: verify with the Google Play Developer API (purchases.products.get), then return ok:true.
+    return { ok: false, reason: 'GOOGLE_VERIFICATION_NOT_IMPLEMENTED' };
   }
 
   return { ok: false, reason: 'UNSUPPORTED_PLATFORM' };

@@ -42,8 +42,8 @@ export function contentRouter(): Router {
     try {
       const doc = await AppContent.findOne({ key: 'support.contact' });
       res.json({
-        email: doc?.value?.email ?? '[CLIENT: support email pending]',
-        phone: doc?.value?.phone ?? '',
+        email: doc?.value?.email ?? 'art@elitebodyfitnesspros.com',
+        phone: doc?.value?.phone ?? '+1 (916) 223-3228',
         hours: doc?.value?.hours ?? '',
         playbackHelp: doc?.value?.playbackHelp ?? 'For video issues, check your connection and try again.',
         purchaseHelp:
@@ -60,7 +60,7 @@ export function contentRouter(): Router {
       const doc = await AppContent.findOne({ key: 'branding' });
       res.json(
         doc?.value ?? {
-          appName: 'APEX Fitness Training',
+          appName: 'ELITE BODY FITNESS PROS',
           tagline: 'Train with precision',
           approvalStatus: 'pending',
         }

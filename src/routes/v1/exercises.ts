@@ -18,7 +18,7 @@ export function exercisesRouter(env: Env): Router {
         throw new ApiError(403, 'LOCKED', 'Purchase this program to access the exercise library');
       }
 
-      const category = req.query.category as string | undefined;
+      const category = typeof req.query.category === 'string' ? req.query.category : undefined;
       const filter: Record<string, unknown> = {
         programSlug,
         published: true,
@@ -108,8 +108,8 @@ export function exercisesRouter(env: Env): Router {
   router.post('/:exerciseId/playback', async (req, res, next) => {
     try {
       const installationId = req.installationId!;
-      const { videoId } = req.body as { videoId?: string };
-      if (!videoId) throw new ApiError(400, 'VALIDATION_ERROR', 'videoId required');
+      const videoId = (req.body as { videoId?: unknown } | undefined)?.videoId;
+      if (typeof videoId !== 'string' || !videoId) throw new ApiError(400, 'VALIDATION_ERROR', 'videoId required');
 
       const exercise = await Exercise.findById(req.params.exerciseId);
       if (!exercise) throw new ApiError(404, 'NOT_FOUND', 'Exercise not found');

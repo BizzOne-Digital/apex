@@ -7,7 +7,7 @@
       "mediaKey": "starter/exercises/lat-pulldown-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5.mp4"
+      "_sourceFile": "Monday - Thursday\\Lat Pulldowns.mp4"
     },
     {
       "programSlug": "starter",
@@ -16,7 +16,7 @@
       "mediaKey": "starter/exercises/seated-cable-row-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5_1.mp4"
+      "_sourceFile": "Monday - Thursday\\Seated Cable Rows.mp4"
     },
     {
       "programSlug": "starter",
@@ -25,7 +25,7 @@
       "mediaKey": "starter/exercises/standing-bicep-cable-curl-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5_2.mp4"
+      "_sourceFile": "Monday - Thursday\\Standing Bicep Cable Curls.mp4"
     },
     {
       "programSlug": "starter",
@@ -34,7 +34,7 @@
       "mediaKey": "starter/exercises/standing-tricep-cable-pressdown-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5_3.mp4"
+      "_sourceFile": "Monday - Thursday\\Standing Tricep Cable Pressdowns.mp4"
     },
     {
       "programSlug": "starter",
@@ -43,7 +43,7 @@
       "mediaKey": "starter/exercises/seated-machine-shoulder-press-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5_4.mp4"
+      "_sourceFile": "Monday - Thursday\\Seated Machine Shoulder Press.mp4"
     },
     {
       "programSlug": "starter",
@@ -52,7 +52,7 @@
       "mediaKey": "starter/exercises/ab-crunch-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Monday - Thursday\\Monday Exercise Demo Videos_5_5.mp4"
+      "_sourceFile": "Monday - Thursday\\Ab Crunches.mp4"
     },
     {
       "programSlug": "starter",
@@ -61,7 +61,7 @@
       "mediaKey": "starter/exercises/seated-leg-extension-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5.mp4"
+      "_sourceFile": "Tuesday - Friday\\Seated Leg Extensions.mp4"
     },
     {
       "programSlug": "starter",
@@ -70,7 +70,7 @@
       "mediaKey": "starter/exercises/leg-press-machine-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5_1.mp4"
+      "_sourceFile": "Tuesday - Friday\\Leg Press Machine.mp4"
     },
     {
       "programSlug": "starter",
@@ -79,7 +79,7 @@
       "mediaKey": "starter/exercises/lying-hamstring-curl-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5_2.mp4"
+      "_sourceFile": "Tuesday - Friday\\Lying Hamstring Curls.mp4"
     },
     {
       "programSlug": "starter",
@@ -88,7 +88,7 @@
       "mediaKey": "starter/exercises/standing-calf-raise-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5_3.mp4"
+      "_sourceFile": "Tuesday - Friday\\Standing Calf Raise.mp4"
     },
     {
       "programSlug": "starter",
@@ -97,7 +97,7 @@
       "mediaKey": "starter/exercises/seated-machine-bench-press-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5_4.mp4"
+      "_sourceFile": "Tuesday - Friday\\Seated Machine Bench Press.mp4"
     },
     {
       "programSlug": "starter",
@@ -106,7 +106,7 @@
       "mediaKey": "starter/exercises/seated-pec-deck-fly-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Tuesday - Friday\\Tuesday Exercise Demo Videos_5_5.mp4"
+      "_sourceFile": "Tuesday - Friday\\Seated Machine Pec Deck Flyes.mp4"
     },
     {
       "programSlug": "starter",
@@ -115,7 +115,7 @@
       "mediaKey": "starter/exercises/cardio-20-min-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Wednesday\\Wednesday Exercise Demo Videos_5.mp4"
+      "_sourceFile": "Wednesday\\Treadmil.mp4"
     },
     {
       "programSlug": "starter",
@@ -124,7 +124,7 @@
       "mediaKey": "starter/exercises/wednesday-abs-female.mp4",
       "durationSeconds": 10,
       "approvalStatus": "approved",
-      "_sourceFile": "Wednesday\\Wednesday Exercise Demo Videos_5_1.mp4"
+      "_sourceFile": "Wednesday\\Ab Crunches.mp4"
     }
   ]
 }

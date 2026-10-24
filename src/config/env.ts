@@ -11,6 +11,11 @@ const envSchema = z.object({
   PLAYBACK_URL_SECRET: z.string().min(16),
   PLAYBACK_URL_TTL_SECONDS: z.coerce.number().default(300),
   ADMIN_API_KEY: z.string().min(8),
+  /** Comma-separated browser origins allowed by CORS (native apps do not need this). */
+  CORS_ORIGINS: z
+    .string()
+    .optional()
+    .transform((v) => (v ?? '').split(',').map((o) => o.trim()).filter(Boolean)),
   ENABLE_DEV_PURCHASE_SIMULATOR: z
     .string()
     .optional()
@@ -41,6 +46,23 @@ export function loadEnv(): Env {
   }
   if (parsed.data.NODE_ENV === 'production' && parsed.data.ENABLE_DEV_PURCHASE_SIMULATOR) {
     throw new Error('ENABLE_DEV_PURCHASE_SIMULATOR must be false in production');
+  }
+  if (parsed.data.NODE_ENV === 'production') {
+    const weak = (v: string) => /change-?me|example|secret|password/i.test(v);
+    if (parsed.data.INSTALLATION_TOKEN_SECRET.length < 32 || weak(parsed.data.INSTALLATION_TOKEN_SECRET)) {
+      throw new Error('INSTALLATION_TOKEN_SECRET must be a strong random value (32+ chars) in production');
+    }
+    if (parsed.data.PLAYBACK_URL_SECRET.length < 32 || weak(parsed.data.PLAYBACK_URL_SECRET)) {
+      throw new Error('PLAYBACK_URL_SECRET must be a strong random value (32+ chars) in production');
+    }
+    if (parsed.data.ADMIN_API_KEY.length < 24 || weak(parsed.data.ADMIN_API_KEY)) {
+      throw new Error('ADMIN_API_KEY must be a strong random value (24+ chars) in production');
+    }
+    if (parsed.data.CLIENT_PREVIEW_DEMO_PURCHASES) {
+      console.warn(
+        '[security] CLIENT_PREVIEW_DEMO_PURCHASES is ON: anyone can unlock paid programs for free. Disable before public release.'
+      );
+    }
   }
   return parsed.data;
 }
