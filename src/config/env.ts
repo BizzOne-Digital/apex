@@ -6,6 +6,8 @@ dotenv.config();
 const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   PORT: z.coerce.number().default(4000),
+  /** Requests per IP per 15 minutes for the general API limiter. */
+  RATE_LIMIT_MAX: z.coerce.number().default(600),
   MONGODB_URI: z.string().min(1),
   INSTALLATION_TOKEN_SECRET: z.string().min(16),
   PLAYBACK_URL_SECRET: z.string().min(16),

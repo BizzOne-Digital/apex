@@ -1,0 +1,391 @@
+{
+  "videos": [
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "leg-extension",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/leg-extension-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Leg Extension Exercise.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "seated-leg-press",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/seated-leg-press-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Seated Plate Loaded Leg Press (2).mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "hamstring-curl",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/hamstring-curl-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Lying Hamstring Curls.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "romanian-deadlift",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/romanian-deadlift-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Romanian Deadlifts With Dumbbells.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "hip-adductor",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/hip-adductor-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Seated Hip Adductor Machine (3).mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "hip-abductor",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/hip-abductor-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Seated Hip Abductor Machine.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "seated-calf-raise",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/seated-calf-raise-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Seated Calf Raises.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "standing-calf-raise",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/standing-calf-raise-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Standing Calf Raises.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "ab-crunch-machine-d1",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/ab-crunch-machine-d1-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\AB CRUNCH MACHINE (3).mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "decline-leg-raise-d1",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/decline-leg-raise-d1-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Leg Raises on a Decline Bench.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "cardio-d1",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/cardio-d1-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Bike or treadmill or Elliptical.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "seated-lat-pulldown",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/seated-lat-pulldown-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Seated Wide Grip Lat Pulldowns.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "close-grip-pulldown",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/close-grip-pulldown-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Seated Close Grip Lat Pulldowns.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "bent-over-row",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/bent-over-row-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Standing bent over dumbbell rows (3).mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "dumbbell-pullover",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/dumbbell-pullover-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Dumbbell Pullovers on a Bench (2).mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "lower-back-extension",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/lower-back-extension-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Seated Low Back Extensions (1).mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "standing-curl",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/standing-curl-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Standing Alternating Dumbbell Curls.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "preacher-curl",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/preacher-curl-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Single Arm Preacher Curls.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "concentration-curl",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/concentration-curl-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Dumbbell Concentration Curls.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "lying-ab-crunch-d2",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/lying-ab-crunch-d2-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Lying Abdominal Crunches.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "standing-leg-raise-d2",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/standing-leg-raise-d2-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Standing Apparatus Leg Raises.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "cardio-d2",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/cardio-d2-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Bike or treadmill or Elliptical.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "ab-crunch-machine-d3",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/ab-crunch-machine-d3-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 3 Wednesday\\AB CRUNCH MACHINE (3).mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "decline-leg-raise-d3",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/decline-leg-raise-d3-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 3 Wednesday\\Decline bench leg raises.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "cardio-d3",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/cardio-d3-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 3 Wednesday\\Bike or treadmill or Elliptical.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "incline-bench-press",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/incline-bench-press-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Incline dumbbell bench press.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "bench-press",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/bench-press-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Flat dumbbell bench press.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "machine-bench-press",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/machine-bench-press-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Machine Bench Press.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "cable-crossover",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/cable-crossover-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Cable crossovers.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "incline-dumbbell-fly",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/incline-dumbbell-fly-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Incline dumbbell flyes.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "cable-pushdown",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/cable-pushdown-female.mp4",
+      "durationSeconds": 2.3,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\tricep press down.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "ez-bar-overhead-extension",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/ez-bar-overhead-extension-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Seated overhead EZ bar triceps extensions.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "single-arm-overhead-extension",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/single-arm-overhead-extension-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Single arm dumbbell overhead extensions.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "ab-crunch-machine-d4",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/ab-crunch-machine-d4-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\AB CRUNCH MACHINE (3).mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "decline-leg-raise-d4",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/decline-leg-raise-d4-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Leg Raises on a Decline Bench.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "cardio-d4",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/cardio-d4-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Bike or treadmill or Elliptical.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "seated-shoulder-press",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/seated-shoulder-press-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 5 Friday\\Seated dumbbell shoulder press.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "lateral-raise",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/lateral-raise-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 5 Friday\\Standing dumbbell lateral raises.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "upright-row",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/upright-row-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 5 Friday\\Standing barbell upright rows.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "rear-delt-raise",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/rear-delt-raise-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 5 Friday\\rear lateral dumbbell raises.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "lying-ab-crunch-d5",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/lying-ab-crunch-d5-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 5 Friday\\Lying ab crunches.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "standing-leg-raise-d5",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/standing-leg-raise-d5-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 5 Friday\\Standing apparatus machine leg raises.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "cardio-d5",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/cardio-d5-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 5 Friday\\Bike or treadmill or Elliptical.mp4"
+    }
+  ]
+}

@@ -64,7 +64,7 @@ export function createApp(env: Env): express.Application {
   });
 
   // General API limit, plus tighter limits on abuse-prone routes.
-  app.use('/api/v1', limiter(15 * 60 * 1000, 600));
+  app.use('/api/v1', limiter(15 * 60 * 1000, env.RATE_LIMIT_MAX));
   app.use('/api/v1/installation/register', limiter(60 * 60 * 1000, 30));
   app.use('/api/v1/purchases', limiter(15 * 60 * 1000, 60));
   app.use('/api/v1/admin', limiter(15 * 60 * 1000, 60));

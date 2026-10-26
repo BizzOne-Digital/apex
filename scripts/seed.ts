@@ -36,13 +36,45 @@ async function seed(): Promise<void> {
     );
   }
 
+  const elite = JSON.parse(readFileSync(join(contentDir, 'elite-exercises.json'), 'utf-8'));
+  if (elite.exercises.length > 0) {
+    const eliteSlugs = elite.exercises.map((ex: { slug: string }) => ex.slug);
+    await Exercise.deleteMany({
+      programSlug: elite.programSlug,
+      slug: { $nin: eliteSlugs },
+    });
+    for (const ex of elite.exercises) {
+      await Exercise.findOneAndUpdate(
+        { programSlug: elite.programSlug, slug: ex.slug },
+        { ...ex, programSlug: elite.programSlug },
+        { upsert: true, new: true }
+      );
+    }
+  }
+
+  const platinum = JSON.parse(readFileSync(join(contentDir, 'platinum-exercises.json'), 'utf-8'));
+  if (platinum.exercises.length > 0) {
+    const platinumSlugs = platinum.exercises.map((ex: { slug: string }) => ex.slug);
+    await Exercise.deleteMany({
+      programSlug: platinum.programSlug,
+      slug: { $nin: platinumSlugs },
+    });
+    for (const ex of platinum.exercises) {
+      await Exercise.findOneAndUpdate(
+        { programSlug: platinum.programSlug, slug: ex.slug },
+        { ...ex, programSlug: platinum.programSlug },
+        { upsert: true, new: true }
+      );
+    }
+  }
+
   const appContent = [
     {
       key: 'safety.disclaimer',
       value: {
         title: 'Safety disclaimer',
         body:
-          '[CLIENT CONTENT PENDING] This app provides general fitness information, not medical advice. Consult a qualified professional before starting. Stop exercising if you experience pain, dizziness, or shortness of breath.',
+          'This app provides general fitness information, not medical advice. Consult a qualified professional before starting. Stop exercising if you experience pain, dizziness, or shortness of breath.',
         approvalStatus: 'pending',
       },
     },

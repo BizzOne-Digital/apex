@@ -1,0 +1,301 @@
+{
+  "videos": [
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-lat-pulldown",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-lat-pulldown-female.mp4",
+      "durationSeconds": 6,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Seated lat pulldowns.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-single-arm-cable-pulldown",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-single-arm-cable-pulldown-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Seated single-arm cable pulldowns.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-machine-row",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-machine-row-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Seated machine rows.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "lower-back-extension",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/lower-back-extension-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Seated Low Back Extensions (2).mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-bicep-preacher-curl",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-bicep-preacher-curl-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Seated bicep preacher curls.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "standing-cable-curl",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/standing-cable-curl-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\standing cable curl.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "lying-ab-crunch-floor",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/lying-ab-crunch-floor-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Lying ab crunches on floor.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "standing-leg-raise-d1",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/standing-leg-raise-d1-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Standing apparatus leg raises.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "cardio-d1",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/cardio-d1-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Bike or treadmill or Elliptical.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-machine-press",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-machine-press-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Seated machine press.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-incline-machine-press",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-incline-machine-press-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Seated incline machine (2).mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-pec-deck-fly",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-pec-deck-fly-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Seated peck deck machine flyes.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "standing-cable-pressdown",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/standing-cable-pressdown-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Standing cable pressdowns (2).mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-overhead-dumbbell-extension",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-overhead-dumbbell-extension-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Seated overhead dumbbell extensions.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-machine-tricep-pushdown",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-machine-tricep-pushdown-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Seated machine tricep pushdowns.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "ab-crunch-machine-d2",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/ab-crunch-machine-d2-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\AB CRUNCH MACHINE (3).mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-decline-crunch-d2",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-decline-crunch-d2-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 2 Tuesday\\Seated decline crunch.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "cardio-d2",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/cardio-d2-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 3 & 5 Wednesday - Friday\\Bike or treadmill or Elliptical.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-shoulder-press",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-shoulder-press-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 3 & 5 Wednesday - Friday\\Seated machine or dumbbell presses (2).mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-lateral-raise",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-lateral-raise-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 3 & 5 Wednesday - Friday\\Seated lateral shoulder raises.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-rear-delt-machine",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-rear-delt-machine-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 3 & 5 Wednesday - Friday\\Seated rear delt machine.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "lying-ab-crunch-d3",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/lying-ab-crunch-d3-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 3 & 5 Wednesday - Friday\\Lying ab crunches.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "standing-leg-raise-d3",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/standing-leg-raise-d3-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 3 & 5 Wednesday - Friday\\Standing apparatus machine leg raises.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "cardio-d3",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/cardio-d3-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 3 & 5 Wednesday - Friday\\Bike or treadmill or Elliptical.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-leg-extension",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-leg-extension-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Leg Extension Exercise.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-leg-press",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-leg-press-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Seated machine presses or plate-loaded leg presses (2).mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-hamstring-curl",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-hamstring-curl-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Seated or lying hamstring curls (2).mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-adductor-abductor",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-adductor-abductor-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Seated adductor and abductor machine.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "standing-calf-raise",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/standing-calf-raise-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Standing calf raises.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-calf-raise",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-calf-raise-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Seated calf raises.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "ab-crunch-machine-d4",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/ab-crunch-machine-d4-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\AB CRUNCH MACHINE (3).mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "seated-decline-crunch-d4",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/seated-decline-crunch-d4-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Seated decline crunch.mp4"
+    },
+    {
+      "programSlug": "elite",
+      "exerciseSlug": "cardio-d4",
+      "avatarPresentation": "female",
+      "mediaKey": "elite/exercises/cardio-d4-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 4 Thursday\\Bike or treadmill or Elliptical.mp4"
+    }
+  ]
+}

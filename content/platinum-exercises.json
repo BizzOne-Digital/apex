@@ -1,5 +1,1221 @@
 {
-  "_comment": "CLIENT: add approved Platinum exercises in sequence when available.",
+  "_comment": "Client-approved Platinum weekly plan. Mon Legs/Calves/Abs, Tue Back/Biceps/Abs, Wed Rest day: Abs & Cardio only, Thu Chest/Triceps/Abs, Fri Shoulders/Abs. Cardio closes every day (heart rate 120-150). Sat/Sun not specified. Friday abs: sets not specified by client.",
   "programSlug": "platinum",
-  "exercises": []
+  "exercises": [
+    {
+      "slug": "leg-extension",
+      "name": "Leg Extensions",
+      "sequence": 1,
+      "workoutDay": 1,
+      "workoutDayLabel": "MONDAY — LEGS / CALVES / ABS",
+      "category": "Lower body",
+      "equipment": [
+        "Leg extension machine"
+      ],
+      "sets": 4,
+      "reps": "10-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Align your knees with the machine axis.",
+        "Extend your legs fully without locking, then lower slowly."
+      ],
+      "formTips": [
+        "Keep your back against the pad.",
+        "Control the lowering."
+      ],
+      "warnings": [
+        "Use a pain-free range only."
+      ],
+      "isPreview": true,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "seated-leg-press",
+      "name": "Seated Plate-Loaded Leg Press or Barbell Squats",
+      "sequence": 2,
+      "workoutDay": 1,
+      "workoutDayLabel": "MONDAY — LEGS / CALVES / ABS",
+      "category": "Lower body",
+      "equipment": [
+        "Plate-loaded leg press or barbell rack"
+      ],
+      "sets": 4,
+      "reps": "6-15",
+      "restSeconds": 90,
+      "instructions": [
+        "Place your feet shoulder-width on the platform.",
+        "Lower until your knees bend comfortably, then press through mid-foot."
+      ],
+      "formTips": [
+        "Keep your lower back on the seat.",
+        "Keep your knees tracking over your toes."
+      ],
+      "warnings": [
+        "Do not lock your knees at the top."
+      ],
+      "isPreview": true,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "hamstring-curl",
+      "name": "Seated or Lying Hamstring Curls",
+      "sequence": 3,
+      "workoutDay": 1,
+      "workoutDayLabel": "MONDAY — LEGS / CALVES / ABS",
+      "category": "Lower body",
+      "equipment": [
+        "Hamstring curl machine"
+      ],
+      "sets": 4,
+      "reps": "6-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Align your knees with the machine axis.",
+        "Curl your heels toward you, then return slowly."
+      ],
+      "formTips": [
+        "Do not lift your hips.",
+        "Control the return."
+      ],
+      "warnings": [
+        "Stop if you feel a cramp or sharp pain."
+      ],
+      "isPreview": true,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "romanian-deadlift",
+      "name": "Romanian Deadlifts — Barbell or Dumbbells",
+      "sequence": 4,
+      "workoutDay": 1,
+      "workoutDayLabel": "MONDAY — LEGS / CALVES / ABS",
+      "category": "Lower body",
+      "equipment": [
+        "Barbell or dumbbells"
+      ],
+      "sets": 4,
+      "reps": "10-20",
+      "restSeconds": 90,
+      "instructions": [
+        "Stand tall holding the weight in front of your thighs.",
+        "Hinge at the hips with a flat back, lower to mid-shin, then stand up."
+      ],
+      "formTips": [
+        "Keep the weight close to your legs.",
+        "Soften your knees slightly."
+      ],
+      "warnings": [
+        "Stop if your back rounds. Use a lighter weight."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "hip-adductor",
+      "name": "Adductor Machine",
+      "sequence": 5,
+      "workoutDay": 1,
+      "workoutDayLabel": "MONDAY — LEGS / CALVES / ABS",
+      "category": "Lower body",
+      "equipment": [
+        "Adductor machine"
+      ],
+      "sets": 4,
+      "reps": "10-20",
+      "restSeconds": 60,
+      "instructions": [
+        "Sit upright with your back on the pad.",
+        "Bring your legs together with control, then open slowly."
+      ],
+      "formTips": [
+        "Keep a steady pace.",
+        "Do not use momentum."
+      ],
+      "warnings": [
+        "Use a comfortable range of motion."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "hip-abductor",
+      "name": "Abductor Machine",
+      "sequence": 6,
+      "workoutDay": 1,
+      "workoutDayLabel": "MONDAY — LEGS / CALVES / ABS",
+      "category": "Lower body",
+      "equipment": [
+        "Abductor machine"
+      ],
+      "sets": 4,
+      "reps": "10-20",
+      "restSeconds": 60,
+      "instructions": [
+        "Sit upright with your back on the pad.",
+        "Push your legs outward with control, then return slowly."
+      ],
+      "formTips": [
+        "Keep a steady pace.",
+        "Do not use momentum."
+      ],
+      "warnings": [
+        "Use a comfortable range of motion."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "seated-calf-raise",
+      "name": "Seated Calf Raises",
+      "sequence": 7,
+      "workoutDay": 1,
+      "workoutDayLabel": "MONDAY — LEGS / CALVES / ABS",
+      "category": "Lower body",
+      "equipment": [
+        "Seated calf raise machine"
+      ],
+      "sets": 4,
+      "reps": "10-20",
+      "restSeconds": 45,
+      "instructions": [
+        "Sit with your knees under the pad.",
+        "Raise your heels, pause, then lower slowly."
+      ],
+      "formTips": [
+        "Do not bounce.",
+        "Feel the stretch at the bottom."
+      ],
+      "warnings": [
+        "Reduce the load if you feel Achilles pain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "standing-calf-raise",
+      "name": "Standing Calf Raises",
+      "sequence": 8,
+      "workoutDay": 1,
+      "workoutDayLabel": "MONDAY — LEGS / CALVES / ABS",
+      "category": "Lower body",
+      "equipment": [
+        "Calf raise machine or step"
+      ],
+      "sets": 4,
+      "reps": "10-20",
+      "restSeconds": 45,
+      "instructions": [
+        "Stand tall with the balls of your feet on the platform.",
+        "Rise onto your toes, pause, then lower slowly."
+      ],
+      "formTips": [
+        "Use the full range of motion.",
+        "Keep your knees soft."
+      ],
+      "warnings": [
+        "Hold a support if you feel unsteady."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "ab-crunch-machine-d1",
+      "name": "Abdominal Crunch Machine — Light Weight",
+      "sequence": 9,
+      "workoutDay": 1,
+      "workoutDayLabel": "MONDAY — LEGS / CALVES / ABS",
+      "category": "Core",
+      "equipment": [
+        "Ab crunch machine"
+      ],
+      "sets": 5,
+      "reps": "20 GOAL",
+      "restSeconds": 45,
+      "instructions": [
+        "Adjust the seat and hold the handles with a light weight.",
+        "Exhale as you crunch forward, then return slowly."
+      ],
+      "formTips": [
+        "Do not pull with your arms.",
+        "Keep your neck relaxed."
+      ],
+      "warnings": [
+        "Stop if you feel lower-back strain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "decline-leg-raise-d1",
+      "name": "Leg Raises on Decline Bench",
+      "sequence": 10,
+      "workoutDay": 1,
+      "workoutDayLabel": "MONDAY — LEGS / CALVES / ABS",
+      "category": "Core",
+      "equipment": [
+        "Decline bench"
+      ],
+      "sets": 5,
+      "reps": "15-20 GOAL",
+      "restSeconds": 45,
+      "instructions": [
+        "Lie on the decline bench and hold the top handles.",
+        "Raise your legs with control, then lower slowly."
+      ],
+      "formTips": [
+        "Do not swing.",
+        "Keep your core braced."
+      ],
+      "warnings": [
+        "Bend your knees if your lower back arches."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "cardio-d1",
+      "name": "Cardio — Bike, Treadmill or Elliptical",
+      "sequence": 11,
+      "workoutDay": 1,
+      "workoutDayLabel": "MONDAY — LEGS / CALVES / ABS",
+      "category": "Cardio",
+      "equipment": [
+        "Bike, treadmill or elliptical"
+      ],
+      "sets": 1,
+      "reps": "30-60 MIN",
+      "durationSeconds": 1800,
+      "restSeconds": 0,
+      "instructions": [
+        "Warm up for 3-5 minutes, then settle into a steady pace.",
+        "Stay at a pace you can keep for 30 to 60 minutes."
+      ],
+      "formTips": [
+        "Keep your heart rate around 120-150 bpm.",
+        "Stay hydrated."
+      ],
+      "warnings": [
+        "Stop if you feel dizzy or have chest pain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "seated-lat-pulldown",
+      "name": "Seated Lat Pulldowns on Cable Machine",
+      "sequence": 12,
+      "workoutDay": 2,
+      "workoutDayLabel": "TUESDAY — BACK / BICEPS / ABS",
+      "category": "Back",
+      "equipment": [
+        "Cable machine"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Sit with your thighs secured under the pads.",
+        "Pull the bar to your upper chest, then return slowly."
+      ],
+      "formTips": [
+        "Lead with your elbows.",
+        "Do not lean back excessively."
+      ],
+      "warnings": [
+        "Stop if you feel sharp shoulder pain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "close-grip-pulldown",
+      "name": "Seated Close-Grip Pulldowns on Cable Machine",
+      "sequence": 13,
+      "workoutDay": 2,
+      "workoutDayLabel": "TUESDAY — BACK / BICEPS / ABS",
+      "category": "Back",
+      "equipment": [
+        "Cable machine"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Sit tall and hold the close-grip handle.",
+        "Pull down to your chest, squeeze, then return with control."
+      ],
+      "formTips": [
+        "Keep your chest lifted.",
+        "Do not swing your torso."
+      ],
+      "warnings": [
+        "Use a weight you can control."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "bent-over-row",
+      "name": "Standing Barbell or Dumbbell Back Rows",
+      "sequence": 14,
+      "workoutDay": 2,
+      "workoutDayLabel": "TUESDAY — BACK / BICEPS / ABS",
+      "category": "Back",
+      "equipment": [
+        "Barbell or dumbbells"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Hinge forward with a flat back and the weight hanging.",
+        "Row to your lower ribs, squeeze, then lower slowly."
+      ],
+      "formTips": [
+        "Keep your core braced.",
+        "Keep your neck neutral."
+      ],
+      "warnings": [
+        "Do not round your lower back."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "dumbbell-pullover",
+      "name": "Dumbbell Pullovers on Bench",
+      "sequence": 15,
+      "workoutDay": 2,
+      "workoutDayLabel": "TUESDAY — BACK / BICEPS / ABS",
+      "category": "Back",
+      "equipment": [
+        "Dumbbell",
+        "Bench"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Lie across the bench holding one dumbbell over your chest.",
+        "Lower it back behind your head with straight-ish arms, then pull back up."
+      ],
+      "formTips": [
+        "Keep your hips low.",
+        "Move slowly through the stretch."
+      ],
+      "warnings": [
+        "Use a lighter weight if your shoulders feel strained."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "lower-back-extension",
+      "name": "Lower Back Extensions — Machine or Freestanding",
+      "sequence": 16,
+      "workoutDay": 2,
+      "workoutDayLabel": "TUESDAY — BACK / BICEPS / ABS",
+      "category": "Back",
+      "equipment": [
+        "Back extension machine"
+      ],
+      "sets": 4,
+      "reps": "6-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Set the pad at hip level and cross your arms.",
+        "Lower with control, then extend to a straight line. Do not over-arch."
+      ],
+      "formTips": [
+        "Move slowly and smoothly.",
+        "Stop at a neutral spine."
+      ],
+      "warnings": [
+        "Stop if you feel pinching or pain in the lower back."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "standing-curl",
+      "name": "Standing Dumbbell or Barbell Curls",
+      "sequence": 17,
+      "workoutDay": 2,
+      "workoutDayLabel": "TUESDAY — BACK / BICEPS / ABS",
+      "category": "Arms",
+      "equipment": [
+        "Dumbbells or barbell"
+      ],
+      "sets": 3,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Stand tall with elbows at your sides.",
+        "Curl up and lower with control."
+      ],
+      "formTips": [
+        "Keep your wrists neutral.",
+        "Avoid swinging your torso."
+      ],
+      "warnings": [
+        "Reduce the weight if your elbows drift forward."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "preacher-curl",
+      "name": "Preacher Curls on Bench — Barbell or Dumbbell",
+      "sequence": 18,
+      "workoutDay": 2,
+      "workoutDayLabel": "TUESDAY — BACK / BICEPS / ABS",
+      "category": "Arms",
+      "equipment": [
+        "Preacher bench"
+      ],
+      "sets": 3,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Rest your upper arms on the pad.",
+        "Curl up, then lower slowly to almost full extension."
+      ],
+      "formTips": [
+        "Keep your upper arms on the pad.",
+        "Do not swing the weight."
+      ],
+      "warnings": [
+        "Do not fully lock the elbows at the bottom."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "concentration-curl",
+      "name": "Dumbbell Concentration Curls on Bench",
+      "sequence": 19,
+      "workoutDay": 2,
+      "workoutDayLabel": "TUESDAY — BACK / BICEPS / ABS",
+      "category": "Arms",
+      "equipment": [
+        "Dumbbell",
+        "Bench"
+      ],
+      "sets": 3,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Sit on the bench and brace your elbow against your inner thigh.",
+        "Curl the dumbbell up, squeeze, then lower slowly."
+      ],
+      "formTips": [
+        "Keep your upper arm still.",
+        "Slow and controlled reps."
+      ],
+      "warnings": [
+        "Do not swing the weight."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "lying-ab-crunch-d2",
+      "name": "Lying Ab Crunches",
+      "sequence": 20,
+      "workoutDay": 2,
+      "workoutDayLabel": "TUESDAY — BACK / BICEPS / ABS",
+      "category": "Core",
+      "equipment": [
+        "Mat"
+      ],
+      "sets": 5,
+      "reps": "15-20 GOAL",
+      "restSeconds": 45,
+      "instructions": [
+        "Lie on your back with knees bent.",
+        "Exhale as you curl up, then lower with control."
+      ],
+      "formTips": [
+        "Do not pull on your neck.",
+        "Quality over speed."
+      ],
+      "warnings": [
+        "Stop if you feel lower-back strain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "standing-leg-raise-d2",
+      "name": "Standing Apparatus Leg Raises",
+      "sequence": 21,
+      "workoutDay": 2,
+      "workoutDayLabel": "TUESDAY — BACK / BICEPS / ABS",
+      "category": "Core",
+      "equipment": [
+        "Leg raise apparatus"
+      ],
+      "sets": 5,
+      "reps": "20 GOAL",
+      "restSeconds": 45,
+      "instructions": [
+        "Support yourself on the apparatus with your back against the pad.",
+        "Raise your legs with control, then lower slowly."
+      ],
+      "formTips": [
+        "Do not swing.",
+        "Keep your core braced."
+      ],
+      "warnings": [
+        "Bend your knees if your lower back arches."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "cardio-d2",
+      "name": "Cardio — Bike, Treadmill or Elliptical",
+      "sequence": 22,
+      "workoutDay": 2,
+      "workoutDayLabel": "TUESDAY — BACK / BICEPS / ABS",
+      "category": "Cardio",
+      "equipment": [
+        "Bike, treadmill or elliptical"
+      ],
+      "sets": 1,
+      "reps": "30-60 MIN",
+      "durationSeconds": 1800,
+      "restSeconds": 0,
+      "instructions": [
+        "Warm up for 3-5 minutes, then settle into a steady pace.",
+        "Stay at a pace you can keep for 30 to 60 minutes."
+      ],
+      "formTips": [
+        "Keep your heart rate around 120-150 bpm.",
+        "Stay hydrated."
+      ],
+      "warnings": [
+        "Stop if you feel dizzy or have chest pain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "ab-crunch-machine-d3",
+      "name": "Ab Crunch Machine — Light Weight",
+      "sequence": 23,
+      "workoutDay": 3,
+      "workoutDayLabel": "WEDNESDAY — REST DAY / ABS & CARDIO",
+      "category": "Core",
+      "equipment": [
+        "Ab crunch machine"
+      ],
+      "sets": 5,
+      "reps": "15-20",
+      "restSeconds": 45,
+      "instructions": [
+        "Adjust the seat and hold the handles with a light weight.",
+        "Exhale as you crunch forward, then return slowly."
+      ],
+      "formTips": [
+        "Do not pull with your arms.",
+        "Keep your neck relaxed."
+      ],
+      "warnings": [
+        "Stop if you feel lower-back strain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "decline-leg-raise-d3",
+      "name": "Decline Bench Leg Raises",
+      "sequence": 24,
+      "workoutDay": 3,
+      "workoutDayLabel": "WEDNESDAY — REST DAY / ABS & CARDIO",
+      "category": "Core",
+      "equipment": [
+        "Decline bench"
+      ],
+      "sets": 5,
+      "reps": "15-20 GOAL",
+      "restSeconds": 45,
+      "instructions": [
+        "Lie on the decline bench and hold the top handles.",
+        "Raise your legs with control, then lower slowly."
+      ],
+      "formTips": [
+        "Do not swing.",
+        "Keep your core braced."
+      ],
+      "warnings": [
+        "Bend your knees if your lower back arches."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "cardio-d3",
+      "name": "Cardio — Bike, Treadmill or Elliptical",
+      "sequence": 25,
+      "workoutDay": 3,
+      "workoutDayLabel": "WEDNESDAY — REST DAY / ABS & CARDIO",
+      "category": "Cardio",
+      "equipment": [
+        "Bike, treadmill or elliptical"
+      ],
+      "sets": 1,
+      "reps": "60 MIN GOAL",
+      "durationSeconds": 3600,
+      "restSeconds": 0,
+      "instructions": [
+        "Warm up for 3-5 minutes, then settle into a steady pace.",
+        "Aim for 1 hour at a pace you can sustain."
+      ],
+      "formTips": [
+        "Keep your heart rate around 120-150 bpm.",
+        "Stay hydrated."
+      ],
+      "warnings": [
+        "Stop if you feel dizzy or have chest pain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "incline-bench-press",
+      "name": "Incline Bench Press — Barbell or Dumbbell",
+      "sequence": 26,
+      "workoutDay": 4,
+      "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
+      "category": "Chest",
+      "equipment": [
+        "Incline bench",
+        "Barbell or dumbbells"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Set the bench to a moderate incline and press from upper chest.",
+        "Lower with control, then press up without locking the elbows."
+      ],
+      "formTips": [
+        "Keep your shoulder blades set.",
+        "Keep your feet planted."
+      ],
+      "warnings": [
+        "Use a spotter or a weight you can control."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "bench-press",
+      "name": "Bench Press — Barbell or Dumbbell",
+      "sequence": 27,
+      "workoutDay": 4,
+      "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
+      "category": "Chest",
+      "equipment": [
+        "Flat bench",
+        "Barbell or dumbbells"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Lie flat with your feet planted and press from mid-chest.",
+        "Lower with control, then press up without locking the elbows."
+      ],
+      "formTips": [
+        "Keep your shoulder blades set.",
+        "Breathe out as you press."
+      ],
+      "warnings": [
+        "Use a spotter or a weight you can control."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "machine-bench-press",
+      "name": "Machine Bench Press",
+      "sequence": 28,
+      "workoutDay": 4,
+      "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
+      "category": "Chest",
+      "equipment": [
+        "Chest press machine"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Adjust the seat so the handles line up with mid-chest.",
+        "Press forward without locking the elbows, then return slowly."
+      ],
+      "formTips": [
+        "Keep your shoulder blades set.",
+        "Breathe out as you press."
+      ],
+      "warnings": [
+        "Stop if you feel shoulder pinching."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "cable-crossover",
+      "name": "Cable Crossovers or Pec Deck Flyes",
+      "sequence": 29,
+      "workoutDay": 4,
+      "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
+      "category": "Chest",
+      "equipment": [
+        "Cable machine or pec deck"
+      ],
+      "sets": 4,
+      "reps": "10-20 GOAL",
+      "restSeconds": 60,
+      "instructions": [
+        "Set the handles at about shoulder height and step forward.",
+        "Bring your hands together in front of your chest, then open with control."
+      ],
+      "formTips": [
+        "Keep a slight bend in your elbows.",
+        "Do not shrug."
+      ],
+      "warnings": [
+        "Use a comfortable stretch only."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "incline-dumbbell-fly",
+      "name": "Incline Dumbbell Flyes",
+      "sequence": 30,
+      "workoutDay": 4,
+      "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
+      "category": "Chest",
+      "equipment": [
+        "Incline bench",
+        "Dumbbells"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Lie on the incline bench with dumbbells above your chest.",
+        "Open your arms in a wide arc with soft elbows, then bring them back together."
+      ],
+      "formTips": [
+        "Use light weights.",
+        "Move slowly."
+      ],
+      "warnings": [
+        "Do not go lower than a comfortable stretch."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "cable-pushdown",
+      "name": "Standing Cable Pushdowns",
+      "sequence": 31,
+      "workoutDay": 4,
+      "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
+      "category": "Arms",
+      "equipment": [
+        "Cable machine"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Pin your elbows at your sides.",
+        "Press down until your arms are straight, then return with control."
+      ],
+      "formTips": [
+        "Keep your shoulders down.",
+        "Squeeze your triceps at the bottom."
+      ],
+      "warnings": [
+        "Do not lock the elbows aggressively."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "ez-bar-overhead-extension",
+      "name": "Seated Overhead Tricep Extensions with EZ Bar",
+      "sequence": 32,
+      "workoutDay": 4,
+      "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
+      "category": "Arms",
+      "equipment": [
+        "EZ bar",
+        "Bench"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Hold the EZ bar overhead with both hands.",
+        "Lower it behind your head by bending the elbows, then extend."
+      ],
+      "formTips": [
+        "Keep your elbows pointing forward.",
+        "Keep your core braced."
+      ],
+      "warnings": [
+        "Choose a lighter weight if your elbows hurt."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "single-arm-overhead-extension",
+      "name": "Single-Arm Dumbbell Overhead Extensions",
+      "sequence": 33,
+      "workoutDay": 4,
+      "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
+      "category": "Arms",
+      "equipment": [
+        "Dumbbell"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Hold one dumbbell overhead.",
+        "Lower it behind your head by bending the elbow, then extend."
+      ],
+      "formTips": [
+        "Keep your upper arm close to your head.",
+        "Complete all reps, then switch arms."
+      ],
+      "warnings": [
+        "Choose a lighter dumbbell if your elbow hurts."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "ab-crunch-machine-d4",
+      "name": "Abdominal Crunch Machine — Light Weight",
+      "sequence": 34,
+      "workoutDay": 4,
+      "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
+      "category": "Core",
+      "equipment": [
+        "Ab crunch machine"
+      ],
+      "sets": 5,
+      "reps": "20 GOAL",
+      "restSeconds": 45,
+      "instructions": [
+        "Adjust the seat and hold the handles with a light weight.",
+        "Exhale as you crunch forward, then return slowly."
+      ],
+      "formTips": [
+        "Do not pull with your arms.",
+        "Keep your neck relaxed."
+      ],
+      "warnings": [
+        "Stop if you feel lower-back strain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "decline-leg-raise-d4",
+      "name": "Leg Raises on Decline Bench",
+      "sequence": 35,
+      "workoutDay": 4,
+      "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
+      "category": "Core",
+      "equipment": [
+        "Decline bench"
+      ],
+      "sets": 5,
+      "reps": "15-20 GOAL",
+      "restSeconds": 45,
+      "instructions": [
+        "Lie on the decline bench and hold the top handles.",
+        "Raise your legs with control, then lower slowly."
+      ],
+      "formTips": [
+        "Do not swing.",
+        "Keep your core braced."
+      ],
+      "warnings": [
+        "Bend your knees if your lower back arches."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "cardio-d4",
+      "name": "Cardio — Bike, Treadmill or Elliptical",
+      "sequence": 36,
+      "workoutDay": 4,
+      "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
+      "category": "Cardio",
+      "equipment": [
+        "Bike, treadmill or elliptical"
+      ],
+      "sets": 1,
+      "reps": "30-60 MIN",
+      "durationSeconds": 1800,
+      "restSeconds": 0,
+      "instructions": [
+        "Warm up for 3-5 minutes, then settle into a steady pace.",
+        "Stay at a pace you can keep for 30 to 60 minutes."
+      ],
+      "formTips": [
+        "Keep your heart rate around 120-150 bpm.",
+        "Stay hydrated."
+      ],
+      "warnings": [
+        "Stop if you feel dizzy or have chest pain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "seated-shoulder-press",
+      "name": "Seated Shoulder Press — Dumbbell or Barbell",
+      "sequence": 37,
+      "workoutDay": 5,
+      "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
+      "category": "Shoulders",
+      "equipment": [
+        "Dumbbells or barbell",
+        "Bench"
+      ],
+      "sets": 5,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Sit with your back supported and the weight at shoulder height.",
+        "Press overhead without arching your back, then lower with control."
+      ],
+      "formTips": [
+        "Brace your core.",
+        "Move smoothly, no jerking."
+      ],
+      "warnings": [
+        "Skip if you have acute shoulder pain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "lateral-raise",
+      "name": "Standing Dumbbell Lateral Raises",
+      "sequence": 38,
+      "workoutDay": 5,
+      "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
+      "category": "Shoulders",
+      "equipment": [
+        "Dumbbells"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Hold a dumbbell in each hand at your sides.",
+        "Raise your arms out to shoulder height, then lower slowly."
+      ],
+      "formTips": [
+        "Lead with your elbows.",
+        "Use light weights and control."
+      ],
+      "warnings": [
+        "Do not raise above shoulder height."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "upright-row",
+      "name": "Standing Upright Rows with Barbell",
+      "sequence": 39,
+      "workoutDay": 5,
+      "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
+      "category": "Shoulders",
+      "equipment": [
+        "Barbell"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Hold the bar in front of your thighs with a shoulder-width grip.",
+        "Lift it toward your chest with elbows high, then lower slowly."
+      ],
+      "formTips": [
+        "Keep the bar close to your body.",
+        "Do not shrug."
+      ],
+      "warnings": [
+        "Stop if you feel shoulder pinching."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "rear-delt-raise",
+      "name": "Seated Rear Shoulder Dumbbell Raises",
+      "sequence": 40,
+      "workoutDay": 5,
+      "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
+      "category": "Shoulders",
+      "equipment": [
+        "Dumbbells",
+        "Bench"
+      ],
+      "sets": 4,
+      "reps": "8-15",
+      "restSeconds": 60,
+      "instructions": [
+        "Sit and lean forward with a dumbbell in each hand.",
+        "Raise your arms out to the sides, squeeze, then lower slowly."
+      ],
+      "formTips": [
+        "Keep a slight bend in your elbows.",
+        "Use light weights."
+      ],
+      "warnings": [
+        "Do not swing your torso."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "lying-ab-crunch-d5",
+      "name": "Lying Ab Crunches",
+      "sequence": 41,
+      "workoutDay": 5,
+      "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
+      "category": "Core",
+      "equipment": [
+        "Mat"
+      ],
+      "reps": "15-20 GOAL",
+      "restSeconds": 45,
+      "instructions": [
+        "Lie on your back with knees bent.",
+        "Exhale as you curl up, then lower with control."
+      ],
+      "formTips": [
+        "Do not pull on your neck.",
+        "Quality over speed."
+      ],
+      "warnings": [
+        "Stop if you feel lower-back strain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "standing-leg-raise-d5",
+      "name": "Standing Apparatus Machine Leg Raises",
+      "sequence": 42,
+      "workoutDay": 5,
+      "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
+      "category": "Core",
+      "equipment": [
+        "Leg raise apparatus"
+      ],
+      "reps": "15-20 GOAL",
+      "restSeconds": 45,
+      "instructions": [
+        "Support yourself on the apparatus with your back against the pad.",
+        "Raise your legs with control, then lower slowly."
+      ],
+      "formTips": [
+        "Do not swing.",
+        "Keep your core braced."
+      ],
+      "warnings": [
+        "Bend your knees if your lower back arches."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "cardio-d5",
+      "name": "Cardio — Bike, Treadmill or Elliptical",
+      "sequence": 43,
+      "workoutDay": 5,
+      "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
+      "category": "Cardio",
+      "equipment": [
+        "Bike, treadmill or elliptical"
+      ],
+      "sets": 1,
+      "reps": "30-60 MIN",
+      "durationSeconds": 1800,
+      "restSeconds": 0,
+      "instructions": [
+        "Warm up for 3-5 minutes, then settle into a steady pace.",
+        "Stay at a pace you can keep for 30 to 60 minutes."
+      ],
+      "formTips": [
+        "Keep your heart rate around 120-150 bpm.",
+        "Stay hydrated."
+      ],
+      "warnings": [
+        "Stop if you feel dizzy or have chest pain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    }
+  ]
 }

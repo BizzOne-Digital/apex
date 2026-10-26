@@ -22,7 +22,6 @@ export function exercisesRouter(env: Env): Router {
       const filter: Record<string, unknown> = {
         programSlug,
         published: true,
-        isPreview: false,
       };
       if (category) filter.category = category;
 

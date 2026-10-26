@@ -16,7 +16,9 @@
     "test:watch": "vitest",
     "seed": "tsx scripts/seed.ts",
     "import:content": "tsx scripts/import-content.ts",
-    "sync:videos": "tsx scripts/sync-client-videos.ts"
+    "sync:videos": "tsx scripts/sync-client-videos.ts",
+    "sync:elite-videos": "tsx scripts/sync-elite-videos.ts",
+    "sync:platinum-videos": "tsx scripts/sync-platinum-videos.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",

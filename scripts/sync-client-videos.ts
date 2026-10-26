@@ -6,7 +6,7 @@
  *   Tuesday - Friday   → Day 2 lifts (Fri repeats)
  *   Wednesday          → Cardio + abs
  */
-import { copyFileSync, existsSync, mkdirSync, readdirSync, writeFileSync } from 'fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -29,7 +29,9 @@ const STARTER_VIDEO_MAP: { subdir: string; slug: string; file: string }[] = [
     slug: 'seated-machine-shoulder-press',
     file: 'Seated Machine Shoulder Press.mp4',
   },
-  { subdir: 'Monday - Thursday', slug: 'ab-crunch', file: 'Ab Crunches.mp4' },
+  { subdir: 'Monday - Thursday', slug: 'ab-crunch', file: 'AB CRUNCH MACHINE (3).mp4' },
+  // Each lifting day ends with 20 min cardio (treadmill clip from that day's folder).
+  { subdir: 'Monday - Thursday', slug: 'cardio-monday-20-min', file: 'Treadmil.mp4' },
 
   { subdir: 'Tuesday - Friday', slug: 'seated-leg-extension', file: 'Seated Leg Extensions.mp4' },
   { subdir: 'Tuesday - Friday', slug: 'leg-press-machine', file: 'Leg Press Machine.mp4' },
@@ -37,6 +39,7 @@ const STARTER_VIDEO_MAP: { subdir: string; slug: string; file: string }[] = [
   { subdir: 'Tuesday - Friday', slug: 'standing-calf-raise', file: 'Standing Calf Raise.mp4' },
   { subdir: 'Tuesday - Friday', slug: 'seated-machine-bench-press', file: 'Seated Machine Bench Press.mp4' },
   { subdir: 'Tuesday - Friday', slug: 'seated-pec-deck-fly', file: 'Seated Machine Pec Deck Flyes.mp4' },
+  { subdir: 'Tuesday - Friday', slug: 'cardio-tuesday-20-min', file: 'Treadmil.mp4' },
 
   { subdir: 'Wednesday', slug: 'cardio-20-min', file: 'Treadmil.mp4' },
   { subdir: 'Wednesday', slug: 'wednesday-abs', file: 'Ab Crunches.mp4' },
@@ -102,6 +105,18 @@ function fallbackFileForSlug(subdir: string, slug: string, folder: string): stri
   return numbered[index] ?? null;
 }
 
+/** Clip length in seconds, read from the MP4 `mvhd` header (no ffmpeg needed). */
+function mp4DurationSeconds(path: string): number | undefined {
+  const buf = readFileSync(path);
+  const i = buf.indexOf('mvhd');
+  if (i < 0) return undefined;
+  const version = buf[i + 4];
+  const o = i + 4 + 4 + (version === 1 ? 16 : 8);
+  const timescale = buf.readUInt32BE(o);
+  const duration = version === 1 ? Number(buf.readBigUInt64BE(o + 4)) : buf.readUInt32BE(o + 4);
+  return timescale ? Math.round((duration / timescale) * 100) / 100 : undefined;
+}
+
 function mediaKeyForSlug(slug: string): string {
   return `starter/exercises/${slug}-female.mp4`;
 }
@@ -145,7 +160,7 @@ function main(): void {
       exerciseSlug: slug,
       avatarPresentation: 'female',
       mediaKey,
-      durationSeconds: 10,
+      durationSeconds: mp4DurationSeconds(src),
       approvalStatus: 'approved',
       _sourceFile: join(subdir, chosen),
     });

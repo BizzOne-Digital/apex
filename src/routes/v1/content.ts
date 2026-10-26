@@ -30,7 +30,7 @@ export function contentRouter(): Router {
         title: doc?.value?.title ?? 'Safety disclaimer',
         body:
           doc?.value?.body ??
-          '[CLIENT CONTENT PENDING] Consult a physician before beginning any exercise program. Stop if you feel pain or discomfort.',
+          'Consult a physician before beginning any exercise program. Stop if you feel pain or discomfort.',
         approvalStatus: doc?.value?.approvalStatus ?? 'pending',
       });
     } catch (e) {
