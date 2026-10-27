@@ -68,6 +68,9 @@ async function seed(): Promise<void> {
     }
   }
 
+  // Client-approved policies (content/legal.json).
+  const legal = JSON.parse(readFileSync(join(contentDir, 'legal.json'), 'utf-8'));
+
   const appContent = [
     {
       key: 'safety.disclaimer',
@@ -78,30 +81,10 @@ async function seed(): Promise<void> {
         approvalStatus: 'pending',
       },
     },
-    {
-      key: 'legal.terms',
-      value: {
-        title: 'Terms of Service',
-        body: '[CLIENT CONTENT PENDING: Terms of Service]',
-        approvalStatus: 'pending',
-      },
-    },
-    {
-      key: 'legal.privacy',
-      value: {
-        title: 'Privacy Policy',
-        body: '[CLIENT CONTENT PENDING: Privacy Policy]',
-        approvalStatus: 'pending',
-      },
-    },
-    {
-      key: 'legal.refund',
-      value: {
-        title: 'Refund Policy',
-        body: '[CLIENT CONTENT PENDING: Refund Policy — follow App Store / Play Store rules]',
-        approvalStatus: 'pending',
-      },
-    },
+    ...(['terms', 'privacy', 'refund'] as const).map((type) => ({
+      key: `legal.${type}`,
+      value: { ...legal.docs[type], approvalStatus: 'approved' },
+    })),
     {
       key: 'support.contact',
       value: {
