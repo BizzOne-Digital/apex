@@ -1,9 +1,19 @@
 import { Entitlement } from '../models/Entitlement.js';
 import { Program } from '../models/Program.js';
 
-export async function getActiveEntitlements(installationId: string): Promise<string[]> {
+/**
+ * Who can use a purchase:
+ *  - an account purchase (userId set) belongs to that account only, so it disappears on logout;
+ *  - an older anonymous purchase (no userId) stays with the device until it is claimed by a login.
+ */
+function ownerFilter(installationId: string, userId?: string) {
+  const anonymous = { installationId, userId: { $exists: false } };
+  return userId ? { $or: [{ userId }, anonymous] } : anonymous;
+}
+
+export async function getActiveEntitlements(installationId: string, userId?: string): Promise<string[]> {
   const rows = await Entitlement.find({
-    installationId,
+    ...ownerFilter(installationId, userId),
     verificationStatus: 'verified',
     entitlementStatus: 'active',
   }).select('programSlug');
@@ -12,10 +22,11 @@ export async function getActiveEntitlements(installationId: string): Promise<str
 
 export async function hasProgramAccess(
   installationId: string,
-  programSlug: string
+  programSlug: string,
+  userId?: string
 ): Promise<boolean> {
   const count = await Entitlement.countDocuments({
-    installationId,
+    ...ownerFilter(installationId, userId),
     programSlug,
     verificationStatus: 'verified',
     entitlementStatus: 'active',
@@ -25,6 +36,7 @@ export async function hasProgramAccess(
 
 export async function grantEntitlement(params: {
   installationId: string;
+  userId?: string;
   programSlug: string;
   purchaseSource: 'apple' | 'google' | 'web' | 'dev_simulator';
   storeTransactionId: string;
@@ -41,6 +53,7 @@ export async function grantEntitlement(params: {
     {
       $set: {
         installationId: params.installationId,
+        ...(params.userId ? { userId: params.userId } : {}),
         purchaseSource: params.purchaseSource,
         storeTransactionId: params.storeTransactionId,
         programSlug: params.programSlug,

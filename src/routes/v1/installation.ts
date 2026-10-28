@@ -25,7 +25,7 @@ export function installationRouter(env: Env): Router {
   router.get('/entitlements', installationAuth(env), async (req, res, next) => {
     try {
       const installationId = req.installationId!;
-      const programs = await getActiveEntitlements(installationId);
+      const programs = await getActiveEntitlements(installationId, req.userId);
       res.json({ programs });
     } catch (e) {
       next(e);

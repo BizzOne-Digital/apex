@@ -3,6 +3,8 @@ import mongoose, { Schema, type InferSchemaType } from 'mongoose';
 const entitlementSchema = new Schema(
   {
     installationId: { type: String, required: true, index: true },
+    /** Set when the buyer was logged in: the account owns the purchase on every device. */
+    userId: { type: String, index: true },
     programSlug: { type: String, required: true, index: true },
     purchaseSource: {
       type: String,

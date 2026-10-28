@@ -64,6 +64,7 @@ export function purchasesRouter(env: Env): Router {
 
       await grantEntitlement({
         installationId,
+        userId: req.userId,
         programSlug: body.programSlug,
         purchaseSource: body.platform === 'ios' ? 'apple' : 'google',
         storeTransactionId: verified.transactionId,
@@ -103,6 +104,7 @@ export function purchasesRouter(env: Env): Router {
 
         await grantEntitlement({
           installationId,
+          userId: req.userId,
           programSlug: program.slug,
           purchaseSource: body.platform === 'ios' ? 'apple' : 'google',
           storeTransactionId: verified.transactionId,
@@ -130,6 +132,7 @@ export function purchasesRouter(env: Env): Router {
 
       await grantEntitlement({
         installationId,
+        userId: req.userId,
         programSlug: body.programSlug,
         purchaseSource: 'dev_simulator',
         storeTransactionId: txId,

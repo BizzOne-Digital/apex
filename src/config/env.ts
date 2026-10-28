@@ -13,6 +13,12 @@ const envSchema = z.object({
   PLAYBACK_URL_SECRET: z.string().min(16),
   PLAYBACK_URL_TTL_SECONDS: z.coerce.number().default(300),
   ADMIN_API_KEY: z.string().min(8),
+  /** Optional dedicated secret for user login tokens (defaults to a value derived from INSTALLATION_TOKEN_SECRET). */
+  AUTH_TOKEN_SECRET: z
+    .string()
+    .optional()
+    .transform((v) => (v && v.trim() ? v.trim() : undefined))
+    .refine((v) => v === undefined || v.length >= 16, 'AUTH_TOKEN_SECRET must be at least 16 characters'),
   /** Comma-separated browser origins allowed by CORS (native apps do not need this). */
   CORS_ORIGINS: z
     .string()

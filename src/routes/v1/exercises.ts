@@ -13,7 +13,7 @@ export function exercisesRouter(env: Env): Router {
     try {
       const { programSlug } = req.params;
       const installationId = req.installationId!;
-      const owned = await hasProgramAccess(installationId, programSlug);
+      const owned = await hasProgramAccess(installationId, programSlug, req.userId);
       if (!owned) {
         throw new ApiError(403, 'LOCKED', 'Purchase this program to access the exercise library');
       }
@@ -60,7 +60,7 @@ export function exercisesRouter(env: Env): Router {
         throw new ApiError(404, 'NOT_FOUND', 'Exercise not found');
       }
 
-      const owned = await hasProgramAccess(installationId, exercise.programSlug);
+      const owned = await hasProgramAccess(installationId, exercise.programSlug, req.userId);
       if (!exercise.isPreview && !owned) {
         throw new ApiError(403, 'LOCKED', 'Purchase required for full exercise details');
       }
@@ -113,7 +113,7 @@ export function exercisesRouter(env: Env): Router {
       const exercise = await Exercise.findById(req.params.exerciseId);
       if (!exercise) throw new ApiError(404, 'NOT_FOUND', 'Exercise not found');
 
-      const owned = await hasProgramAccess(installationId, exercise.programSlug);
+      const owned = await hasProgramAccess(installationId, exercise.programSlug, req.userId);
       if (!exercise.isPreview && !owned) {
         throw new ApiError(403, 'LOCKED', 'Purchase required for video playback');
       }

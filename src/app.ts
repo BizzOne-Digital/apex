@@ -7,10 +7,12 @@ import { connectMongo } from './db.js';
 import { createV1Router } from './routes/v1/index.js';
 import { sendError } from './utils/errors.js';
 
-function limiter(windowMs: number, max: number) {
+function limiter(windowMs: number, max: number, onlyFailures = false) {
   return rateLimit({
     windowMs,
     max,
+    // Failures only: many real users share one mobile-network IP, so successful requests must not use up the budget.
+    skipSuccessfulRequests: onlyFailures,
     standardHeaders: true,
     legacyHeaders: false,
     message: { error: { code: 'RATE_LIMITED', message: 'Too many requests, please try again later' } },
@@ -45,8 +47,8 @@ export function createApp(env: Env): express.Application {
         }
         return cb(null, false);
       },
-      allowedHeaders: ['Content-Type', 'x-installation-id', 'x-installation-token', 'x-admin-api-key'],
-      methods: ['GET', 'POST', 'OPTIONS'],
+      allowedHeaders: ['Content-Type', 'Authorization', 'x-installation-id', 'x-installation-token', 'x-admin-api-key'],
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       maxAge: 600,
     })
   );
@@ -68,6 +70,9 @@ export function createApp(env: Env): express.Application {
   app.use('/api/v1/installation/register', limiter(60 * 60 * 1000, 30));
   app.use('/api/v1/purchases', limiter(15 * 60 * 1000, 60));
   app.use('/api/v1/admin', limiter(15 * 60 * 1000, 60));
+  // Login / account calls: only failed attempts count (the per-email lockout handles targeted guessing).
+  app.use('/api/v1/auth', limiter(15 * 60 * 1000, 60, true));
+  app.use('/api/v1/auth/signup', limiter(60 * 60 * 1000, 30));
   app.use('/api/v1', createV1Router(env));
 
   app.use((_req, res) => {

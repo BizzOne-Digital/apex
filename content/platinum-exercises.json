@@ -14,7 +14,7 @@
       ],
       "sets": 4,
       "reps": "10-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Align your knees with the machine axis.",
         "Extend your legs fully without locking, then lower slowly."
@@ -70,7 +70,7 @@
       ],
       "sets": 4,
       "reps": "6-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Align your knees with the machine axis.",
         "Curl your heels toward you, then return slowly."
@@ -126,7 +126,7 @@
       ],
       "sets": 4,
       "reps": "10-20",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Sit upright with your back on the pad.",
         "Bring your legs together with control, then open slowly."
@@ -154,7 +154,7 @@
       ],
       "sets": 4,
       "reps": "10-20",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Sit upright with your back on the pad.",
         "Push your legs outward with control, then return slowly."
@@ -182,7 +182,7 @@
       ],
       "sets": 4,
       "reps": "10-20",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Sit with your knees under the pad.",
         "Raise your heels, pause, then lower slowly."
@@ -210,7 +210,7 @@
       ],
       "sets": 4,
       "reps": "10-20",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Stand tall with the balls of your feet on the platform.",
         "Rise onto your toes, pause, then lower slowly."
@@ -238,7 +238,7 @@
       ],
       "sets": 5,
       "reps": "20 GOAL",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Adjust the seat and hold the handles with a light weight.",
         "Exhale as you crunch forward, then return slowly."
@@ -266,7 +266,7 @@
       ],
       "sets": 5,
       "reps": "15-20 GOAL",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Lie on the decline bench and hold the top handles.",
         "Raise your legs with control, then lower slowly."
@@ -323,7 +323,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Sit with your thighs secured under the pads.",
         "Pull the bar to your upper chest, then return slowly."
@@ -351,7 +351,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Sit tall and hold the close-grip handle.",
         "Pull down to your chest, squeeze, then return with control."
@@ -379,7 +379,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Hinge forward with a flat back and the weight hanging.",
         "Row to your lower ribs, squeeze, then lower slowly."
@@ -408,7 +408,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Lie across the bench holding one dumbbell over your chest.",
         "Lower it back behind your head with straight-ish arms, then pull back up."
@@ -436,7 +436,7 @@
       ],
       "sets": 4,
       "reps": "6-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Set the pad at hip level and cross your arms.",
         "Lower with control, then extend to a straight line. Do not over-arch."
@@ -464,7 +464,7 @@
       ],
       "sets": 3,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Stand tall with elbows at your sides.",
         "Curl up and lower with control."
@@ -492,7 +492,7 @@
       ],
       "sets": 3,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Rest your upper arms on the pad.",
         "Curl up, then lower slowly to almost full extension."
@@ -521,7 +521,7 @@
       ],
       "sets": 3,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Sit on the bench and brace your elbow against your inner thigh.",
         "Curl the dumbbell up, squeeze, then lower slowly."
@@ -549,7 +549,7 @@
       ],
       "sets": 5,
       "reps": "15-20 GOAL",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Lie on your back with knees bent.",
         "Exhale as you curl up, then lower with control."
@@ -577,7 +577,7 @@
       ],
       "sets": 5,
       "reps": "20 GOAL",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Support yourself on the apparatus with your back against the pad.",
         "Raise your legs with control, then lower slowly."
@@ -634,7 +634,7 @@
       ],
       "sets": 5,
       "reps": "15-20",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Adjust the seat and hold the handles with a light weight.",
         "Exhale as you crunch forward, then return slowly."
@@ -662,7 +662,7 @@
       ],
       "sets": 5,
       "reps": "15-20 GOAL",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Lie on the decline bench and hold the top handles.",
         "Raise your legs with control, then lower slowly."
@@ -720,7 +720,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Set the bench to a moderate incline and press from upper chest.",
         "Lower with control, then press up without locking the elbows."
@@ -749,7 +749,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Lie flat with your feet planted and press from mid-chest.",
         "Lower with control, then press up without locking the elbows."
@@ -777,7 +777,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Adjust the seat so the handles line up with mid-chest.",
         "Press forward without locking the elbows, then return slowly."
@@ -805,7 +805,7 @@
       ],
       "sets": 4,
       "reps": "10-20 GOAL",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Set the handles at about shoulder height and step forward.",
         "Bring your hands together in front of your chest, then open with control."
@@ -834,7 +834,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Lie on the incline bench with dumbbells above your chest.",
         "Open your arms in a wide arc with soft elbows, then bring them back together."
@@ -862,7 +862,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Pin your elbows at your sides.",
         "Press down until your arms are straight, then return with control."
@@ -891,7 +891,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Hold the EZ bar overhead with both hands.",
         "Lower it behind your head by bending the elbows, then extend."
@@ -919,7 +919,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Hold one dumbbell overhead.",
         "Lower it behind your head by bending the elbow, then extend."
@@ -947,7 +947,7 @@
       ],
       "sets": 5,
       "reps": "20 GOAL",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Adjust the seat and hold the handles with a light weight.",
         "Exhale as you crunch forward, then return slowly."
@@ -975,7 +975,7 @@
       ],
       "sets": 5,
       "reps": "15-20 GOAL",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Lie on the decline bench and hold the top handles.",
         "Raise your legs with control, then lower slowly."
@@ -1033,7 +1033,7 @@
       ],
       "sets": 5,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Sit with your back supported and the weight at shoulder height.",
         "Press overhead without arching your back, then lower with control."
@@ -1061,7 +1061,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Hold a dumbbell in each hand at your sides.",
         "Raise your arms out to shoulder height, then lower slowly."
@@ -1089,7 +1089,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Hold the bar in front of your thighs with a shoulder-width grip.",
         "Lift it toward your chest with elbows high, then lower slowly."
@@ -1118,7 +1118,7 @@
       ],
       "sets": 4,
       "reps": "8-15",
-      "restSeconds": 60,
+      "restSeconds": 90,
       "instructions": [
         "Sit and lean forward with a dumbbell in each hand.",
         "Raise your arms out to the sides, squeeze, then lower slowly."
@@ -1145,7 +1145,7 @@
         "Mat"
       ],
       "reps": "15-20 GOAL",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Lie on your back with knees bent.",
         "Exhale as you curl up, then lower with control."
@@ -1172,7 +1172,7 @@
         "Leg raise apparatus"
       ],
       "reps": "15-20 GOAL",
-      "restSeconds": 45,
+      "restSeconds": 90,
       "instructions": [
         "Support yourself on the apparatus with your back against the pad.",
         "Raise your legs with control, then lower slowly."

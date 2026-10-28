@@ -12,7 +12,7 @@ export function programsRouter(): Router {
       const programs = await Program.find({ published: true }).sort({ displayOrder: 1 });
       let owned: string[] = [];
       if (req.installationId) {
-        owned = await getActiveEntitlements(req.installationId);
+        owned = await getActiveEntitlements(req.installationId, req.userId);
       }
       res.json({
         programs: programs.map((p) => ({
@@ -38,7 +38,7 @@ export function programsRouter(): Router {
 
       let owned = false;
       if (req.installationId) {
-        const entitlements = await getActiveEntitlements(req.installationId);
+        const entitlements = await getActiveEntitlements(req.installationId, req.userId);
         owned = entitlements.includes(program.slug);
       }
 

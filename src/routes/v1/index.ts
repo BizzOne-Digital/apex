@@ -10,6 +10,9 @@ import { contentRouter } from './content.js';
 import { installationRouter } from './installation.js';
 import { mediaRouter } from './media.js';
 import { adminRouter } from './admin.js';
+import { authRouter } from './auth.js';
+import { uploadsRouter } from './uploads.js';
+import { optionalUser } from '../../middleware/userAuth.js';
 
 export function createV1Router(env: Env): Router {
   const router = Router();
@@ -31,7 +34,12 @@ export function createV1Router(env: Env): Router {
   const requiredInstall = installationAuth(env);
   const optionalInstall = optionalInstallationAuth(env);
 
+  // Accounts are optional: a valid Bearer token sets req.userId, otherwise the device acts anonymously.
+  router.use(optionalUser(env));
+
   router.use('/installation', installationRouter(env));
+  router.use('/auth', optionalInstall, authRouter(env));
+  router.use('/uploads', uploadsRouter());
 
   router.use('/programs', optionalInstall, programsRouter());
 
