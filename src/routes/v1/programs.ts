@@ -3,8 +3,10 @@ import { Program } from '../../models/Program.js';
 import { Exercise } from '../../models/Exercise.js';
 import { getActiveEntitlements } from '../../services/entitlementService.js';
 import { ApiError } from '../../utils/errors.js';
+import type { Env } from '../../config/env.js';
+import { priceBreakdown } from '../../config/pricing.js';
 
-export function programsRouter(): Router {
+export function programsRouter(env: Env): Router {
   const router = Router();
 
   router.get('/', async (req, res, next) => {
@@ -21,6 +23,7 @@ export function programsRouter(): Router {
           level: p.level,
           description: p.description,
           displayPriceUsd: p.displayPriceUsd,
+          pricing: priceBreakdown(p.displayPriceUsd, env.TAX_RATE_PERCENT),
           artworkUrl: p.artworkUrl,
           locked: !owned.includes(p.slug),
           owned: owned.includes(p.slug),
@@ -57,6 +60,7 @@ export function programsRouter(): Router {
           level: program.level,
           description: program.description,
           displayPriceUsd: program.displayPriceUsd,
+          pricing: priceBreakdown(program.displayPriceUsd, env.TAX_RATE_PERCENT),
           storeProductIds: program.storeProductIds,
           artworkUrl: program.artworkUrl,
           featureFlags: program.featureFlags,

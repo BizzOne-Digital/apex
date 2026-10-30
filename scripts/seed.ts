@@ -89,8 +89,7 @@ async function seed(): Promise<void> {
       key: 'support.contact',
       value: {
         email: 'art@elitebodyfitnesspros.com',
-        phone: '+1 (916) 223-3228',
-        purchaseHelp: 'Purchases are tied to your Apple ID or Google account. Use Restore Purchases on a new install.',
+        purchaseHelp: 'Purchases are tied to your account. Log in on a new install and your programs unlock automatically.',
         playbackHelp: 'Ensure a stable connection. Tap retry if a video fails to load.',
       },
     },

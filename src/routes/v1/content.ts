@@ -43,12 +43,11 @@ export function contentRouter(): Router {
       const doc = await AppContent.findOne({ key: 'support.contact' });
       res.json({
         email: doc?.value?.email ?? 'art@elitebodyfitnesspros.com',
-        phone: doc?.value?.phone ?? '+1 (916) 223-3228',
         hours: doc?.value?.hours ?? '',
         playbackHelp: doc?.value?.playbackHelp ?? 'For video issues, check your connection and try again.',
         purchaseHelp:
           doc?.value?.purchaseHelp ??
-          'Use Restore Purchases with the same Apple ID or Google account used to buy the program.',
+          'Log in with the account you bought the program with and it unlocks automatically.',
       });
     } catch (e) {
       next(e);

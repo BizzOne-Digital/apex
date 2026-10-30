@@ -6,7 +6,25 @@
   "functions": {
     "api/index.ts": {
       "maxDuration": 60
+    },
+    "api/stripe-webhook.ts": {
+      "maxDuration": 60
     }
   },
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/index" }]
+  "rewrites": [
+    {
+      "source": "/api/v1/stripe/webhook",
+      "destination": "/api/stripe-webhook"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api/index"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/v1/cron/reconcile",
+      "schedule": "0 3 * * *"
+    }
+  ]
 }

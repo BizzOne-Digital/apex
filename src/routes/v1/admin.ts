@@ -5,6 +5,8 @@ import { ExerciseVideo } from '../../models/ExerciseVideo.js';
 import { Program } from '../../models/Program.js';
 import { AppContent } from '../../models/AppContent.js';
 import { ApiError } from '../../utils/errors.js';
+import type { Env } from '../../config/env.js';
+import { reconcileOrders } from '../../services/purchaseSaga.js';
 
 const upsertExerciseSchema = z.object({
   programSlug: z.string(),
@@ -52,8 +54,17 @@ const upsertContentSchema = z.object({
   value: z.unknown(),
 });
 
-export function adminRouter(): Router {
+export function adminRouter(env: Env): Router {
   const router = Router();
+
+  /** Safety net for lost webhooks / crashed sagas. Safe to call repeatedly (e.g. from a scheduled job). */
+  router.post('/orders/reconcile', async (_req, res, next) => {
+    try {
+      res.json({ success: true, ...(await reconcileOrders(env)) });
+    } catch (e) {
+      next(e);
+    }
+  });
 
   router.post('/programs/upsert', async (req, res, next) => {
     try {

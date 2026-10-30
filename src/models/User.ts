@@ -1,8 +1,14 @@
 import mongoose, { Schema, type InferSchemaType } from 'mongoose';
 
+/**
+ * Set USERS_SHARDED=true once `users` is sharded (see scripts/enable-sharding.ts): a sharded collection
+ * cannot carry a unique index on email (uniqueness then lives in the sharded `useremails` directory).
+ */
+const usersSharded = process.env.USERS_SHARDED === 'true';
+
 const userSchema = new Schema(
   {
-    email: { type: String, required: true, unique: true, lowercase: true, trim: true },
+    email: { type: String, required: true, lowercase: true, trim: true, ...(usersSharded ? { index: true } : { unique: true }) },
     passwordHash: { type: String, required: true },
     name: { type: String, required: true, trim: true },
     age: { type: Number },

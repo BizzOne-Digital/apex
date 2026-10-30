@@ -3,9 +3,10 @@ import express, { Router } from 'express';
 import { z } from 'zod';
 import type { Env } from '../../config/env.js';
 import { User, type UserDocument } from '../../models/User.js';
+import { createUserWithEmail, findUserByEmail, releaseEmail } from '../../services/userDirectory.js';
 import { StoredUpload } from '../../models/StoredUpload.js';
 import { Entitlement } from '../../models/Entitlement.js';
-import { hashPassword, issueUserToken, verifyPassword } from '../../services/auth.js';
+import { hashPassword, issueUserToken, needsRehash, verifyPassword } from '../../services/auth.js';
 import { requireUser } from '../../middleware/userAuth.js';
 import { ApiError } from '../../utils/errors.js';
 
@@ -29,11 +30,25 @@ const profileSchema = z
     if (cm < 100 || cm > 250) ctx.addIssue({ code: 'custom', path: ['height', 'value'], message: 'Enter a realistic height' });
   });
 
-const signupSchema = z.object({
-  email: z.string().trim().toLowerCase().email().max(200),
-  password: z.string().min(8, 'Password must be at least 8 characters').max(128),
-  profile: profileSchema,
-});
+// The most-used passwords: rejected even when they meet the length rule.
+const COMMON_PASSWORDS = new Set([
+  'password', 'password1', 'password12', 'password123', 'password1234', '12345678', '123456789', '1234567890', '11111111',
+  'qwerty123', 'qwertyuiop', '1q2w3e4r', 'iloveyou', 'letmein123', 'welcome123', 'admin123', 'abc12345', 'football1',
+  'baseball1', 'monkey123', 'dragon123', 'fitness123', 'workout123', 'gym12345', 'changeme123',
+]);
+
+const signupSchema = z
+  .object({
+    email: z.string().trim().toLowerCase().email().max(200),
+    password: z.string().min(8, 'Password must be at least 8 characters').max(128),
+    profile: profileSchema,
+  })
+  .superRefine((b, ctx) => {
+    const pw = b.password.toLowerCase();
+    if (COMMON_PASSWORDS.has(pw) || pw === b.email || /^(.)\1+$/.test(pw)) {
+      ctx.addIssue({ code: 'custom', path: ['password'], message: 'Choose a less common password' });
+    }
+  });
 
 const loginSchema = z.object({
   email: z.string().trim().toLowerCase().email().max(200),
@@ -116,10 +131,7 @@ export function authRouter(env: Env): Router {
   router.post('/signup', async (req, res, next) => {
     try {
       const body = signupSchema.parse(req.body);
-      if (await User.exists({ email: body.email })) {
-        throw new ApiError(409, 'EMAIL_TAKEN', 'An account with this email already exists. Please log in.');
-      }
-      const user = await User.create({
+      const user = await createUserWithEmail({
         email: body.email,
         passwordHash: await hashPassword(body.password),
         name: body.profile.name,
@@ -131,10 +143,6 @@ export function authRouter(env: Env): Router {
       const programs = await linkEntitlements(user._id.toString(), req.installationId);
       res.status(201).json({ token: issueUserToken(env, user._id.toString()), user: publicUser(user), programs });
     } catch (e) {
-      if ((e as { code?: number }).code === 11000) {
-        next(new ApiError(409, 'EMAIL_TAKEN', 'An account with this email already exists. Please log in.'));
-        return;
-      }
       next(e);
     }
   });
@@ -143,13 +151,17 @@ export function authRouter(env: Env): Router {
     try {
       const body = loginSchema.parse(req.body);
       assertNotLocked(body.email);
-      const user = await User.findOne({ email: body.email });
+      const user = await findUserByEmail(env, body.email);
       const ok = await verifyPassword(body.password, user ? user.passwordHash : await DUMMY_HASH_PROMISE);
       if (!user || !ok) {
         recordFailedLogin(body.email);
         throw new ApiError(401, 'INVALID_CREDENTIALS', 'Invalid email or password');
       }
       failedLogins.delete(body.email);
+      if (needsRehash(user.passwordHash)) {
+        // Upgrade hashes made with the older, cheaper scrypt settings now that we know the password.
+        await User.updateOne({ _id: user._id }, { $set: { passwordHash: await hashPassword(body.password) } }).catch(() => undefined);
+      }
       const programs = await linkEntitlements(user._id.toString(), req.installationId);
       res.json({ token: issueUserToken(env, user._id.toString()), user: publicUser(user), programs });
     } catch (e) {
@@ -234,6 +246,7 @@ export function authRouter(env: Env): Router {
         await deleteStoredAvatar(user.avatarUrl);
         await StoredUpload.deleteMany({ ownerId: user._id.toString() });
         await User.deleteOne({ _id: user._id });
+        await releaseEmail(user.email, user._id.toString());
       }
       res.json({ success: true });
     } catch (e) {

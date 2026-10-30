@@ -4,6 +4,7 @@ import { rateLimit } from 'express-rate-limit';
 import type { Env } from './config/env.js';
 import { helmet } from './shims/helmet.js';
 import { connectMongo } from './db.js';
+import { cronReconcileHandler, stripeReturnRouter, stripeWebhookHandler } from './routes/stripe.js';
 import { createV1Router } from './routes/v1/index.js';
 import { sendError } from './utils/errors.js';
 
@@ -52,7 +53,16 @@ export function createApp(env: Env): express.Application {
       maxAge: 600,
     })
   );
+  // Stripe signs the raw request bytes, so this route must be registered before the JSON parser.
+  app.post('/api/v1/stripe/webhook', express.raw({ type: 'application/json', limit: '1mb' }), stripeWebhookHandler(env));
+
   app.use(express.json({ limit: '100kb' }));
+
+  // Account and payment responses must never be cached by a browser or proxy.
+  app.use(['/api/v1/auth', '/api/v1/purchases'], (_req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store');
+    next();
+  });
 
   app.get('/health', (_req, res) => res.json({ status: 'ok' }));
 
@@ -73,6 +83,8 @@ export function createApp(env: Env): express.Application {
   // Login / account calls: only failed attempts count (the per-email lockout handles targeted guessing).
   app.use('/api/v1/auth', limiter(15 * 60 * 1000, 60, true));
   app.use('/api/v1/auth/signup', limiter(60 * 60 * 1000, 30));
+  app.get('/api/v1/cron/reconcile', cronReconcileHandler(env));
+  app.use('/api/v1/stripe', stripeReturnRouter());
   app.use('/api/v1', createV1Router(env));
 
   app.use((_req, res) => {

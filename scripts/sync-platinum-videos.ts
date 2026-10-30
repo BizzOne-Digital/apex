@@ -46,6 +46,9 @@ const PLATINUM_VIDEO_MAP: { subdir: string; slug: string; file: string }[] = [
   { subdir: D2, slug: 'cardio-d2', file: 'Bike or treadmill or Elliptical.mp4' },
   { subdir: D3, slug: 'ab-crunch-machine-d3', file: 'AB CRUNCH MACHINE (3).mp4' },
   { subdir: D3, slug: 'decline-leg-raise-d3', file: 'Decline bench leg raises.mp4' },
+  // Wednesday also repeats Monday's two calf exercises (same clips as Day 1).
+  { subdir: D1, slug: 'seated-calf-raise-d3', file: 'Seated Calf Raises.mp4' },
+  { subdir: D1, slug: 'standing-calf-raise-d3', file: 'Standing Calf Raises.mp4' },
   { subdir: D3, slug: 'cardio-d3', file: 'Bike or treadmill or Elliptical.mp4' },
   { subdir: D4, slug: 'incline-bench-press', file: 'Incline dumbbell bench press.mp4' },
   { subdir: D4, slug: 'bench-press', file: 'Flat dumbbell bench press.mp4' },

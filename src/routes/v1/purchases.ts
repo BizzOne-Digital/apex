@@ -6,6 +6,10 @@ import { grantEntitlement, linkInstallationToExistingPurchase } from '../../serv
 import { verifyStorePurchase } from '../../services/storeVerification.js';
 import { isWebPurchaseEnabled, verifyWebPurchase } from '../../services/webPurchase.js';
 import { ApiError } from '../../utils/errors.js';
+import { requireUser } from '../../middleware/userAuth.js';
+import { Order } from '../../models/Order.js';
+import { startCheckout, toPublicOrder } from '../../services/purchaseSaga.js';
+import { stripeEnabled } from '../../services/stripeClient.js';
 
 const verifyBodySchema = z.object({
   platform: z.enum(['ios', 'android']),
@@ -32,8 +36,52 @@ const devSimSchema = z.object({
   programSlug: z.string().min(1),
 });
 
+const checkoutSchema = z.object({
+  programSlug: z.string().trim().min(1).max(60),
+});
+
+const ORDER_ID = /^[0-9a-f-]{36}$/;
+
 export function purchasesRouter(env: Env): Router {
   const router = Router();
+  const mustLogin = requireUser(env);
+
+  /** Tells the app how to take payment, so a server setting (not an app rebuild) switches Stripe on. */
+  router.get('/config', (_req, res) => {
+    res.json({
+      payments: stripeEnabled(env) ? 'stripe' : 'store',
+      currency: 'usd',
+      taxRatePercent: env.TAX_RATE_PERCENT,
+      taxLabel: env.TAX_LABEL,
+    });
+  });
+
+  /** Starts a Stripe Checkout for the logged-in account. Price and tax are always computed here, never by the app. */
+  router.post('/checkout', mustLogin, async (req, res, next) => {
+    try {
+      const body = checkoutSchema.parse(req.body);
+      const { order, checkoutUrl } = await startCheckout(env, {
+        userId: req.userId!,
+        installationId: req.installationId!,
+        programSlug: body.programSlug,
+      });
+      res.status(201).json({ order, checkoutUrl });
+    } catch (e) {
+      next(e);
+    }
+  });
+
+  /** Order status for the app to poll after the payment page closes. Only the owner can see an order. */
+  router.get('/orders/:orderId', mustLogin, async (req, res, next) => {
+    try {
+      const id = String(req.params.orderId);
+      const order = ORDER_ID.test(id) ? await Order.findOne({ orderId: id, userId: req.userId }) : null;
+      if (!order) throw new ApiError(404, 'NOT_FOUND', 'Order not found');
+      res.json({ order: toPublicOrder(order) });
+    } catch (e) {
+      next(e);
+    }
+  });
 
   router.post('/verify', async (req, res, next) => {
     try {

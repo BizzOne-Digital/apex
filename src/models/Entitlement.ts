@@ -8,7 +8,7 @@ const entitlementSchema = new Schema(
     programSlug: { type: String, required: true, index: true },
     purchaseSource: {
       type: String,
-      enum: ['apple', 'google', 'web', 'dev_simulator'],
+      enum: ['apple', 'google', 'web', 'stripe', 'dev_simulator'],
       required: true,
     },
     storeTransactionId: { type: String, required: true, index: true },

@@ -41,7 +41,7 @@ export function createV1Router(env: Env): Router {
   router.use('/auth', optionalInstall, authRouter(env));
   router.use('/uploads', uploadsRouter());
 
-  router.use('/programs', optionalInstall, programsRouter());
+  router.use('/programs', optionalInstall, programsRouter(env));
 
   router.use('/content', contentRouter());
 
@@ -50,7 +50,7 @@ export function createV1Router(env: Env): Router {
   // Signed playback URLs include installationId; native players often omit auth headers on GET.
   router.use('/media', optionalInstall, mediaRouter(env));
 
-  router.use('/admin', adminAuth(env), adminRouter());
+  router.use('/admin', adminAuth(env), adminRouter(env));
 
   return router;
 }

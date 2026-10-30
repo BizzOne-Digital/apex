@@ -218,6 +218,24 @@
     },
     {
       "programSlug": "platinum",
+      "exerciseSlug": "seated-calf-raise-d3",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/seated-calf-raise-d3-female.mp4",
+      "durationSeconds": 6.02,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Seated Calf Raises.mp4"
+    },
+    {
+      "programSlug": "platinum",
+      "exerciseSlug": "standing-calf-raise-d3",
+      "avatarPresentation": "female",
+      "mediaKey": "platinum/exercises/standing-calf-raise-d3-female.mp4",
+      "durationSeconds": 6.04,
+      "approvalStatus": "approved",
+      "_sourceFile": "Day 1 Monday\\Standing Calf Raises.mp4"
+    },
+    {
+      "programSlug": "platinum",
       "exerciseSlug": "cardio-d3",
       "avatarPresentation": "female",
       "mediaKey": "platinum/exercises/cardio-d3-female.mp4",

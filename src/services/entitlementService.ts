@@ -38,7 +38,7 @@ export async function grantEntitlement(params: {
   installationId: string;
   userId?: string;
   programSlug: string;
-  purchaseSource: 'apple' | 'google' | 'web' | 'dev_simulator';
+  purchaseSource: 'apple' | 'google' | 'web' | 'stripe' | 'dev_simulator';
   storeTransactionId: string;
   rawReceiptRef?: string;
   metadata?: Record<string, unknown>;

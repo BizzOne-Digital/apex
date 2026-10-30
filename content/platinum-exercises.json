@@ -1,5 +1,5 @@
 {
-  "_comment": "Client-approved Platinum weekly plan. Mon Legs/Calves/Abs, Tue Back/Biceps/Abs, Wed Rest day: Abs & Cardio only, Thu Chest/Triceps/Abs, Fri Shoulders/Abs. Cardio closes every day (heart rate 120-150). Sat/Sun not specified. Friday abs: sets not specified by client.",
+  "_comment": "Client-approved Platinum weekly plan. Mon Legs/Calves/Abs, Tue Back/Biceps/Abs, Wed Rest day: Abs, Calves & Cardio only (Seated and Standing Calf Raises repeat from Monday, placed after the Decline Bench Leg Raises), Thu Chest/Triceps/Abs, Fri Shoulders/Abs. Cardio closes every day (heart rate 120-150). Sat/Sun not specified. Friday abs: sets not specified by client.",
   "programSlug": "platinum",
   "exercises": [
     {
@@ -679,9 +679,65 @@
       "contentApprovalStatus": "approved"
     },
     {
+      "slug": "seated-calf-raise-d3",
+      "name": "Seated Calf Raises",
+      "sequence": 25,
+      "workoutDay": 3,
+      "workoutDayLabel": "WEDNESDAY — REST DAY / ABS & CARDIO",
+      "category": "Lower body",
+      "equipment": [
+        "Seated calf raise machine"
+      ],
+      "sets": 4,
+      "reps": "10-20",
+      "restSeconds": 90,
+      "instructions": [
+        "Sit with your knees under the pad.",
+        "Raise your heels, pause, then lower slowly."
+      ],
+      "formTips": [
+        "Do not bounce.",
+        "Feel the stretch at the bottom."
+      ],
+      "warnings": [
+        "Reduce the load if you feel Achilles pain."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
+      "slug": "standing-calf-raise-d3",
+      "name": "Standing Calf Raises",
+      "sequence": 26,
+      "workoutDay": 3,
+      "workoutDayLabel": "WEDNESDAY — REST DAY / ABS & CARDIO",
+      "category": "Lower body",
+      "equipment": [
+        "Calf raise machine or step"
+      ],
+      "sets": 4,
+      "reps": "10-20",
+      "restSeconds": 90,
+      "instructions": [
+        "Stand tall with the balls of your feet on the platform.",
+        "Rise onto your toes, pause, then lower slowly."
+      ],
+      "formTips": [
+        "Use the full range of motion.",
+        "Keep your knees soft."
+      ],
+      "warnings": [
+        "Hold a support if you feel unsteady."
+      ],
+      "isPreview": false,
+      "published": true,
+      "contentApprovalStatus": "approved"
+    },
+    {
       "slug": "cardio-d3",
       "name": "Cardio — Bike, Treadmill or Elliptical",
-      "sequence": 25,
+      "sequence": 27,
       "workoutDay": 3,
       "workoutDayLabel": "WEDNESDAY — REST DAY / ABS & CARDIO",
       "category": "Cardio",
@@ -710,7 +766,7 @@
     {
       "slug": "incline-bench-press",
       "name": "Incline Bench Press — Barbell or Dumbbell",
-      "sequence": 26,
+      "sequence": 28,
       "workoutDay": 4,
       "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
       "category": "Chest",
@@ -739,7 +795,7 @@
     {
       "slug": "bench-press",
       "name": "Bench Press — Barbell or Dumbbell",
-      "sequence": 27,
+      "sequence": 29,
       "workoutDay": 4,
       "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
       "category": "Chest",
@@ -768,7 +824,7 @@
     {
       "slug": "machine-bench-press",
       "name": "Machine Bench Press",
-      "sequence": 28,
+      "sequence": 30,
       "workoutDay": 4,
       "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
       "category": "Chest",
@@ -796,7 +852,7 @@
     {
       "slug": "cable-crossover",
       "name": "Cable Crossovers or Pec Deck Flyes",
-      "sequence": 29,
+      "sequence": 31,
       "workoutDay": 4,
       "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
       "category": "Chest",
@@ -824,7 +880,7 @@
     {
       "slug": "incline-dumbbell-fly",
       "name": "Incline Dumbbell Flyes",
-      "sequence": 30,
+      "sequence": 32,
       "workoutDay": 4,
       "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
       "category": "Chest",
@@ -853,7 +909,7 @@
     {
       "slug": "cable-pushdown",
       "name": "Standing Cable Pushdowns",
-      "sequence": 31,
+      "sequence": 33,
       "workoutDay": 4,
       "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
       "category": "Arms",
@@ -881,7 +937,7 @@
     {
       "slug": "ez-bar-overhead-extension",
       "name": "Seated Overhead Tricep Extensions with EZ Bar",
-      "sequence": 32,
+      "sequence": 34,
       "workoutDay": 4,
       "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
       "category": "Arms",
@@ -910,7 +966,7 @@
     {
       "slug": "single-arm-overhead-extension",
       "name": "Single-Arm Dumbbell Overhead Extensions",
-      "sequence": 33,
+      "sequence": 35,
       "workoutDay": 4,
       "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
       "category": "Arms",
@@ -938,7 +994,7 @@
     {
       "slug": "ab-crunch-machine-d4",
       "name": "Abdominal Crunch Machine — Light Weight",
-      "sequence": 34,
+      "sequence": 36,
       "workoutDay": 4,
       "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
       "category": "Core",
@@ -966,7 +1022,7 @@
     {
       "slug": "decline-leg-raise-d4",
       "name": "Leg Raises on Decline Bench",
-      "sequence": 35,
+      "sequence": 37,
       "workoutDay": 4,
       "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
       "category": "Core",
@@ -994,7 +1050,7 @@
     {
       "slug": "cardio-d4",
       "name": "Cardio — Bike, Treadmill or Elliptical",
-      "sequence": 36,
+      "sequence": 38,
       "workoutDay": 4,
       "workoutDayLabel": "THURSDAY — CHEST / TRICEPS / ABS",
       "category": "Cardio",
@@ -1023,7 +1079,7 @@
     {
       "slug": "seated-shoulder-press",
       "name": "Seated Shoulder Press — Dumbbell or Barbell",
-      "sequence": 37,
+      "sequence": 39,
       "workoutDay": 5,
       "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
       "category": "Shoulders",
@@ -1052,7 +1108,7 @@
     {
       "slug": "lateral-raise",
       "name": "Standing Dumbbell Lateral Raises",
-      "sequence": 38,
+      "sequence": 40,
       "workoutDay": 5,
       "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
       "category": "Shoulders",
@@ -1080,7 +1136,7 @@
     {
       "slug": "upright-row",
       "name": "Standing Upright Rows with Barbell",
-      "sequence": 39,
+      "sequence": 41,
       "workoutDay": 5,
       "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
       "category": "Shoulders",
@@ -1108,7 +1164,7 @@
     {
       "slug": "rear-delt-raise",
       "name": "Seated Rear Shoulder Dumbbell Raises",
-      "sequence": 40,
+      "sequence": 42,
       "workoutDay": 5,
       "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
       "category": "Shoulders",
@@ -1137,7 +1193,7 @@
     {
       "slug": "lying-ab-crunch-d5",
       "name": "Lying Ab Crunches",
-      "sequence": 41,
+      "sequence": 43,
       "workoutDay": 5,
       "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
       "category": "Core",
@@ -1164,7 +1220,7 @@
     {
       "slug": "standing-leg-raise-d5",
       "name": "Standing Apparatus Machine Leg Raises",
-      "sequence": 42,
+      "sequence": 44,
       "workoutDay": 5,
       "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
       "category": "Core",
@@ -1191,7 +1247,7 @@
     {
       "slug": "cardio-d5",
       "name": "Cardio — Bike, Treadmill or Elliptical",
-      "sequence": 43,
+      "sequence": 45,
       "workoutDay": 5,
       "workoutDayLabel": "FRIDAY — SHOULDERS / ABS",
       "category": "Cardio",

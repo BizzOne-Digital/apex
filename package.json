@@ -15,6 +15,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "seed": "tsx scripts/seed.ts",
+    "shard:users": "tsx scripts/enable-sharding.ts",
+    "backfill:user-emails": "tsx scripts/backfill-user-emails.ts",
     "import:content": "tsx scripts/import-content.ts",
     "sync:videos": "tsx scripts/sync-client-videos.ts",
     "sync:elite-videos": "tsx scripts/sync-elite-videos.ts",
@@ -28,6 +30,7 @@
     "helmet": "^8.0.0",
     "mongoose": "^8.9.3",
     "serverless-http": "^3.2.0",
+    "stripe": "^23.1.0",
     "uuid": "^11.0.3",
     "zod": "^3.24.1"
   },
