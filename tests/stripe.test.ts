@@ -62,7 +62,7 @@ const paidSession = (orderId: string, over: Record<string, unknown> = {}) => ({
   object: 'checkout.session',
   payment_status: 'paid',
   status: 'complete',
-  amount_total: 22487,
+  amount_total: 21641,
   currency: 'usd',
   payment_intent: 'pi_test_1',
   client_reference_id: orderId,
@@ -80,10 +80,10 @@ const owned = async (headers: Record<string, string>) =>
   (await request(app).get('/api/v1/installation/entitlements').set(headers)).body.programs as string[];
 
 describe('tax', () => {
-  it('adds 13% to the price in whole cents, rounded half-up', () => {
-    expect(priceBreakdown(99, 13)).toMatchObject({ subtotalCents: 9900, taxCents: 1287, totalCents: 11187 });
-    expect(priceBreakdown(199, 13)).toMatchObject({ subtotalCents: 19900, taxCents: 2587, totalCents: 22487 });
-    expect(priceBreakdown(0.99, 13).taxCents).toBe(13); // 12.87 cents -> 13
+  it('adds 8.75% to the price in whole cents, rounded half-up', () => {
+    expect(priceBreakdown(99, 8.75)).toMatchObject({ subtotalCents: 9900, taxCents: 866, totalCents: 10766 });
+    expect(priceBreakdown(199, 8.75)).toMatchObject({ subtotalCents: 19900, taxCents: 1741, totalCents: 21641 });
+    expect(priceBreakdown(0.99, 8.75).taxCents).toBe(9); // 8.66 cents -> 9
     expect(priceBreakdown(10.05, 0)).toMatchObject({ taxCents: 0, totalCents: 1005 });
   });
 });
@@ -101,12 +101,12 @@ describe('stripe checkout + payment saga', () => {
 
   it('shows price, tax and total on the program, and tells the app payments run on Stripe', async () => {
     const p = await request(app).get('/api/v1/programs/elite').set(device());
-    expect(p.body.program.pricing).toMatchObject({ subtotalCents: 19900, taxCents: 2587, totalCents: 22487, taxRatePercent: 13 });
+    expect(p.body.program.pricing).toMatchObject({ subtotalCents: 19900, taxCents: 1741, totalCents: 21641, taxRatePercent: 8.75 });
     const c = await request(app).get('/api/v1/purchases/config').set(device());
-    expect(c.body).toMatchObject({ payments: 'stripe', taxRatePercent: 13, taxLabel: 'HST' });
+    expect(c.body).toMatchObject({ payments: 'stripe', taxRatePercent: 8.75, taxLabel: 'Sales Tax' });
   });
 
-  it('needs a login, builds the session on the server with price + 13% tax, and never trusts client amounts', async () => {
+  it('needs a login, builds the session on the server with price + 8.75% tax, and never trusts client amounts', async () => {
     const anon = await request(app).post('/api/v1/purchases/checkout').set(device()).send({ programSlug: 'elite' });
     expect(anon.status).toBe(401);
 
@@ -114,12 +114,12 @@ describe('stripe checkout + payment saga', () => {
     const res = await openCheckout(headers);
     expect(res.status).toBe(201);
     expect(res.body.checkoutUrl).toBe('https://checkout.stripe.test/c/pay/cs_test_1');
-    expect(res.body.order.pricing).toMatchObject({ subtotalCents: 19900, taxCents: 2587, totalCents: 22487 });
+    expect(res.body.order.pricing).toMatchObject({ subtotalCents: 19900, taxCents: 1741, totalCents: 21641 });
 
     const [params, options] = createSession.mock.calls[0];
     expect(params.mode).toBe('payment');
-    expect(params.line_items.map((l: { price_data: { unit_amount: number } }) => l.price_data.unit_amount)).toEqual([19900, 2587]);
-    expect(params.line_items[1].price_data.product_data.name).toBe('HST (13%)');
+    expect(params.line_items.map((l: { price_data: { unit_amount: number } }) => l.price_data.unit_amount)).toEqual([19900, 1741]);
+    expect(params.line_items[1].price_data.product_data.name).toBe('Sales Tax (8.75%)');
     expect(params.metadata).toMatchObject({ orderId: res.body.order.orderId, userId, programSlug: 'elite' });
     expect(params.success_url).toContain('https://api.example.test/api/v1/stripe/return?o=');
     expect(options.idempotencyKey).toBe(`order_${res.body.order.orderId}_session`);

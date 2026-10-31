@@ -15,7 +15,7 @@ Never put a Stripe key in the app, in git, or in a chat. Keys live only in the s
 | `INSTALLATION_TOKEN_SECRET`, `PLAYBACK_URL_SECRET` | 32+ random characters |
 | `ADMIN_API_KEY` | 24+ random characters |
 | `CRON_SECRET` | 16+ random characters (turns on the daily reconcile job) |
-| `TAX_RATE_PERCENT` / `TAX_LABEL` | `13` / `HST` (these are the defaults) |
+| `TAX_RATE_PERCENT` / `TAX_LABEL` | `8.75` / `Sales Tax` (Sacramento, CA; these are the defaults) |
 | `ENABLE_DEV_PURCHASE_SIMULATOR`, `CLIENT_PREVIEW_DEMO_PURCHASES` | `false` (the server refuses to start with demo purchases on while Stripe is on) |
 | `MEDIA_CDN_BASE_URL` | where the videos are hosted (Vercel cannot hold 500 MB of video) |
 

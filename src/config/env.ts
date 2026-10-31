@@ -61,9 +61,9 @@ const envSchema = z.object({
     .optional()
     .transform((v) => (v && v.trim() ? v.trim() : undefined))
     .refine((v) => v === undefined || v.length >= 16, 'CRON_SECRET must be at least 16 characters'),
-  /** Sales tax added on top of the program price, in percent (13 = HST 13%). */
-  TAX_RATE_PERCENT: z.coerce.number().min(0).max(30).default(13),
-  TAX_LABEL: z.string().trim().min(1).max(20).default('HST'),
+  /** Sales tax added on top of the program price, in percent (8.75 = Sacramento, CA sales tax). */
+  TAX_RATE_PERCENT: z.coerce.number().min(0).max(30).default(8.75),
+  TAX_LABEL: z.string().trim().min(1).max(20).default('Sales Tax'),
   /**
    * Accounts are looked up through the sharded email directory. Keep true until scripts/backfill-user-emails.ts
    * has run; then set false so unknown emails never trigger a cluster-wide scan.

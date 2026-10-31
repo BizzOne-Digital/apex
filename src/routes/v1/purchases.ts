@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { z } from 'zod';
 import type { Env } from '../../config/env.js';
 import { Program } from '../../models/Program.js';
-import { grantEntitlement, linkInstallationToExistingPurchase } from '../../services/entitlementService.js';
+import { grantEntitlement } from '../../services/entitlementService.js';
 import { verifyStorePurchase } from '../../services/storeVerification.js';
 import { isWebPurchaseEnabled, verifyWebPurchase } from '../../services/webPurchase.js';
 import { ApiError } from '../../utils/errors.js';
