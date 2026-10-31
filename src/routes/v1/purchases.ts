@@ -8,7 +8,7 @@ import { isWebPurchaseEnabled, verifyWebPurchase } from '../../services/webPurch
 import { ApiError } from '../../utils/errors.js';
 import { requireUser } from '../../middleware/userAuth.js';
 import { Order } from '../../models/Order.js';
-import { startCheckout, toPublicOrder } from '../../services/purchaseSaga.js';
+import { startCheckout, syncOrderWithStripe, toPublicOrder } from '../../services/purchaseSaga.js';
 import { stripeEnabled } from '../../services/stripeClient.js';
 
 const verifyBodySchema = z.object({
@@ -77,7 +77,7 @@ export function purchasesRouter(env: Env): Router {
       const id = String(req.params.orderId);
       const order = ORDER_ID.test(id) ? await Order.findOne({ orderId: id, userId: req.userId }) : null;
       if (!order) throw new ApiError(404, 'NOT_FOUND', 'Order not found');
-      res.json({ order: toPublicOrder(order) });
+      res.json({ order: toPublicOrder(await syncOrderWithStripe(env, order)) });
     } catch (e) {
       next(e);
     }

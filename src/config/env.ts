@@ -53,6 +53,15 @@ const envSchema = z.object({
   STRIPE_WEBHOOK_SECRET: optionalTrimmed,
   /** Public https base URL of this API, used for Stripe's return page (e.g. https://api.example.com). */
   PUBLIC_API_URL: optionalTrimmed,
+  /** Purchase confirmation emails (customer + owner). Leave SMTP_HOST empty to turn emails off. */
+  SMTP_HOST: optionalTrimmed,
+  SMTP_PORT: z.coerce.number().int().min(1).max(65535).default(465),
+  SMTP_USER: optionalTrimmed,
+  SMTP_PASS: optionalTrimmed,
+  /** Sender shown to customers, e.g. Elite Body Fitness Pros <art@yourdomain.com>. Defaults to SMTP_USER. */
+  MAIL_FROM: optionalTrimmed,
+  /** Who gets the new-purchase email. Defaults to MAIL_FROM. */
+  OWNER_NOTIFY_EMAIL: optionalTrimmed,
   /** Development/test only: send Stripe API calls to a local mock instead of api.stripe.com. Refused in production. */
   STRIPE_API_BASE: optionalTrimmed,
   /** Bearer secret for the scheduled reconcile job (GET /api/v1/cron/reconcile). The route is off when unset. */
@@ -116,7 +125,7 @@ export function loadEnv(): Env {
       throw new Error('AUTH_TOKEN_SECRET must be a dedicated strong random value (32+ chars) in production');
     }
     if (stripeKey) {
-      if (!parsed.data.STRIPE_WEBHOOK_SECRET) throw new Error('STRIPE_WEBHOOK_SECRET is required in production when Stripe is enabled');
+      // STRIPE_WEBHOOK_SECRET is optional: without it, payments are confirmed by asking Stripe directly when the app returns.
       if (!parsed.data.PUBLIC_API_URL?.startsWith('https://')) throw new Error('PUBLIC_API_URL must be an https:// URL in production when Stripe is enabled');
       if (parsed.data.CLIENT_PREVIEW_DEMO_PURCHASES) {
         throw new Error('CLIENT_PREVIEW_DEMO_PURCHASES must be off when Stripe payments are enabled in production');

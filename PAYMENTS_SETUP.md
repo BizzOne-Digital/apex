@@ -9,7 +9,7 @@ Never put a Stripe key in the app, in git, or in a chat. Keys live only in the s
 |---|---|
 | `NODE_ENV` | `production` |
 | `STRIPE_SECRET_KEY` | your live secret key (`sk_live_...`). The server refuses a live key anywhere except `NODE_ENV=production`. |
-| `STRIPE_WEBHOOK_SECRET` | `whsec_...` of the webhook endpoint from step 2 |
+| `STRIPE_WEBHOOK_SECRET` | OPTIONAL. Not needed: after paying, the app asks the server and the server verifies the payment with Stripe directly. Add it only if you create the webhook in step 2. |
 | `PUBLIC_API_URL` | `https://<your-api-domain>` (must be https) |
 | `AUTH_TOKEN_SECRET` | 32+ random characters (now required in production) |
 | `INSTALLATION_TOKEN_SECRET`, `PLAYBACK_URL_SECRET` | 32+ random characters |
@@ -21,7 +21,9 @@ Never put a Stripe key in the app, in git, or in a chat. Keys live only in the s
 
 Random value: `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`
 
-## 2. Stripe dashboard
+## 2. Stripe dashboard (OPTIONAL: skip it if the client does not want a webhook)
+
+Without a webhook everything works for normal purchases. Only refunds/disputes made in the Stripe dashboard will not remove access automatically.
 
 1. Developers > Webhooks > Add endpoint: `https://<your-api-domain>/api/v1/stripe/webhook`
 2. Select exactly these events:

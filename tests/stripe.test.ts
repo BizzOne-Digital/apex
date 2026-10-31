@@ -13,6 +13,7 @@ import { StripeEvent } from '../src/models/StripeEvent.js';
 import { issueInstallationToken } from '../src/services/installationToken.js';
 import { reconcileOrders } from '../src/services/purchaseSaga.js';
 import { setStripeClientForTests } from '../src/services/stripeClient.js';
+import { setMailSenderForTests } from '../src/services/mailer.js';
 
 const WEBHOOK_SECRET = 'whsec_' + 'a'.repeat(32);
 const DEVICE = '33333333-3333-3333-3333-333333333333';
@@ -32,13 +33,17 @@ const createRefund = vi.fn();
 beforeAll(() => {
   process.env.STRIPE_SECRET_KEY = 'sk_test_' + 'b'.repeat(24);
   process.env.STRIPE_WEBHOOK_SECRET = WEBHOOK_SECRET;
+  process.env.OWNER_NOTIFY_EMAIL = 'owner@test.com';
   process.env.PUBLIC_API_URL = 'https://api.example.test';
   env = loadEnv();
   app = createApp(env);
   setStripeClientForTests(stripe);
 });
 
-afterAll(() => setStripeClientForTests(null));
+afterAll(() => {
+  setStripeClientForTests(null);
+  setMailSenderForTests(null);
+});
 
 const device = () => ({ 'x-installation-id': DEVICE, 'x-installation-token': issueInstallationToken(DEVICE, env) });
 const profile = { name: 'Pay Tester', age: 30, gender: 'male', weight: { value: 80, unit: 'kg' }, height: { value: 180, unit: 'cm' } };
@@ -273,6 +278,74 @@ describe('stripe checkout + payment saga', () => {
     expect(await owned(headers)).toEqual(['elite']);
   });
 
+  it('works without any webhook: the app asking about the order verifies the payment with Stripe and unlocks', async () => {
+    const { headers } = await login();
+    const o = (await openCheckout(headers)).body.order;
+    expect(await owned(headers)).toEqual([]);
+    retrieveSession.mockResolvedValue({ ...paidSession(o.orderId), status: 'open', payment_status: 'unpaid' });
+    const still = await request(app).get(`/api/v1/purchases/orders/${o.orderId}`).set(headers);
+    expect(still.body.order.status).toBe('checkout_open');
+    expect(await owned(headers)).toEqual([]);
+    retrieveSession.mockResolvedValue(paidSession(o.orderId));
+    const done = await request(app).get(`/api/v1/purchases/orders/${o.orderId}`).set(headers);
+    expect(done.body.order.status).toBe('fulfilled');
+    expect(await owned(headers)).toEqual(['elite']);
+    const again = await request(app).get(`/api/v1/purchases/orders/${o.orderId}`).set(headers); // polling again changes nothing
+    expect(again.body.order.status).toBe('fulfilled');
+    expect(await Entitlement.countDocuments({ programSlug: 'elite' })).toBe(1);
+  });
+
+  it('a wrong amount found on return is refunded, not unlocked', async () => {
+    const { headers } = await login();
+    const o = (await openCheckout(headers)).body.order;
+    retrieveSession.mockResolvedValue(paidSession(o.orderId, { amount_total: 100 }));
+    const res = await request(app).get(`/api/v1/purchases/orders/${o.orderId}`).set(headers);
+    expect(res.body.order.status).not.toBe('fulfilled');
+    expect(await owned(headers)).toEqual([]);
+  });
+
+  it('emails the customer and the owner once when the purchase completes, and never twice', async () => {
+    const sent: { to: string; subject: string; text: string }[] = [];
+    setMailSenderForTests(async (m) => { sent.push(m); });
+    try {
+      const { headers } = await login();
+      const o = (await openCheckout(headers)).body.order;
+      retrieveSession.mockResolvedValue(paidSession(o.orderId));
+      for (let i = 0; i < 3; i++) await request(app).get(`/api/v1/purchases/orders/${o.orderId}`).set(headers);
+      await sendWebhook(evt('checkout.session.completed', paidSession(o.orderId)));
+      expect(sent).toHaveLength(2);
+      const customer = sent.find((m) => m.to !== sent[0].to || m === sent[0]);
+      expect(sent.map((m) => m.subject).join(' ')).toMatch(/purchase is confirmed/);
+      expect(sent.map((m) => m.subject).join(' ')).toMatch(/New purchase/);
+      expect(sent.every((m) => m.text.includes('$216.41'))).toBe(true);
+      expect(customer).toBeTruthy();
+    } finally {
+      setMailSenderForTests(null);
+    }
+  });
+
+  it('a broken mail server never blocks the purchase, and reconcile sends the emails later', async () => {
+    let fail = true;
+    const sent: string[] = [];
+    setMailSenderForTests(async (m) => { if (fail) throw new Error('smtp down'); sent.push(m.to); });
+    try {
+      const { headers } = await login();
+      const o = (await openCheckout(headers)).body.order;
+      retrieveSession.mockResolvedValue(paidSession(o.orderId));
+      const res = await request(app).get(`/api/v1/purchases/orders/${o.orderId}`).set(headers);
+      expect(res.body.order.status).toBe('fulfilled');
+      expect(await owned(headers)).toEqual(['elite']);
+      expect(sent).toHaveLength(0);
+      fail = false;
+      await reconcileOrders(env);
+      expect(sent).toHaveLength(2);
+      await reconcileOrders(env);
+      expect(sent).toHaveLength(2);
+    } finally {
+      setMailSenderForTests(null);
+    }
+  });
+
   it('only the admin key can run reconcile', async () => {
     expect((await request(app).post('/api/v1/admin/orders/reconcile')).status).toBe(401);
     const ok = await request(app).post('/api/v1/admin/orders/reconcile').set('x-admin-api-key', 'test-admin-key');
@@ -313,8 +386,8 @@ describe('stripe key safety', () => {
     withEnv(prodBase, () => expect(loadEnv().STRIPE_SECRET_KEY).toMatch(/^sk_live_/));
   });
 
-  it('production needs the webhook secret, an https public url, no demo purchases and a dedicated auth secret', () => {
-    withEnv({ ...prodBase, STRIPE_WEBHOOK_SECRET: '' }, () => expect(() => loadEnv()).toThrow(/STRIPE_WEBHOOK_SECRET is required/));
+  it('production works without a webhook secret, but needs an https public url, no demo purchases and a dedicated auth secret', () => {
+    withEnv({ ...prodBase, STRIPE_WEBHOOK_SECRET: '' }, () => expect(loadEnv().STRIPE_SECRET_KEY).toMatch(/^sk_live_/));
     withEnv({ ...prodBase, PUBLIC_API_URL: 'http://api.example.com' }, () => expect(() => loadEnv()).toThrow(/PUBLIC_API_URL must be an https/));
     withEnv({ ...prodBase, CLIENT_PREVIEW_DEMO_PURCHASES: 'true' }, () => expect(() => loadEnv()).toThrow(/CLIENT_PREVIEW_DEMO_PURCHASES must be off/));
     withEnv({ ...prodBase, AUTH_TOKEN_SECRET: '' }, () => expect(() => loadEnv()).toThrow(/AUTH_TOKEN_SECRET must be a dedicated strong/));

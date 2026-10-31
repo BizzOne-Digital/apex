@@ -46,6 +46,8 @@ const orderSchema = new Schema(
     expiresAt: { type: Date },
     paidAt: { type: Date },
     fulfilledAt: { type: Date },
+    /** Set once the confirmation emails went out (claimed before sending, released on failure). */
+    emailsSentAt: { type: Date },
     failureReason: { type: String },
     sagaLog: { type: [sagaStepSchema], default: [] },
   },

@@ -8,6 +8,7 @@ import { Program } from '../models/Program.js';
 import { User } from '../models/User.js';
 import { ApiError } from '../utils/errors.js';
 import { grantEntitlement } from './entitlementService.js';
+import { sendPurchaseEmails } from './purchaseEmails.js';
 import { getStripe } from './stripeClient.js';
 
 /**
@@ -238,6 +239,8 @@ async function fulfill(env: Env, order: OrderDocument): Promise<void> {
   await log(order.orderId, 'entitlement', 'ok');
   await transition(order.orderId, ['paid'], 'fulfilled', { fulfilledAt: new Date() });
   await log(order.orderId, 'order_fulfilled', 'ok');
+  const done = await Order.findOne({ orderId: order.orderId });
+  if (done) await sendPurchaseEmails(env, done);
 }
 
 export async function handleCheckoutCompleted(env: Env, session: Stripe.Checkout.Session): Promise<void> {
@@ -338,6 +341,28 @@ export async function dispatchStripeEvent(env: Env, event: Stripe.Event): Promis
   }
 }
 
+// ------------------------------------------------------------------------------------------- verify on return
+
+/**
+ * Works without a webhook: when the app asks about an order that is still open, ask Stripe directly (server to
+ * server, with the secret key) whether it was paid, then run the same saga step the webhook would run.
+ * The answer comes from Stripe's API, never from the app, so it cannot be faked. Safe to call repeatedly.
+ */
+export async function syncOrderWithStripe(env: Env, order: OrderDocument): Promise<OrderDocument> {
+  if (!['created', 'checkout_open'].includes(order.status) || !order.stripeSessionId) return order;
+  try {
+    const s = await getStripe(env).checkout.sessions.retrieve(order.stripeSessionId);
+    if (s.status === 'complete' && s.payment_status === 'paid') {
+      await handleCheckoutCompleted(env, s);
+    } else if (s.status === 'expired') {
+      await handleSessionExpired({ ...s, metadata: { ...(s.metadata ?? {}), orderId: order.orderId } } as Stripe.Checkout.Session);
+    }
+  } catch (e) {
+    console.error('[stripe] could not verify order', order.orderId, (e as Error).message);
+  }
+  return (await Order.findOne({ orderId: order.orderId })) ?? order;
+}
+
 // ------------------------------------------------------------------------------------------- reconcile
 
 /**
@@ -374,6 +399,10 @@ export async function reconcileOrders(env: Env): Promise<{ checked: number; adva
     await fulfill(env, o);
     out.advanced++;
   }
+
+  // Fulfilled but the confirmation emails did not go out (mail outage): try again for 2 days.
+  const unmailed = await Order.find({ status: 'fulfilled', emailsSentAt: { $exists: false }, fulfilledAt: { $gt: new Date(Date.now() - 2 * 86_400_000) } }).limit(50);
+  for (const o of unmailed) await sendPurchaseEmails(env, o);
 
   // Refund that failed earlier: try again (idempotency key makes this safe).
   const refunds = await Order.find({ status: 'refund_pending', updatedAt: { $lt: cutoff } }).limit(100);
